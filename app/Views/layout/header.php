@@ -29,8 +29,8 @@
     <link href="<?php echo base_url() ?>/temp-admin/vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url() ?>/temp-admin/vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url() ?>/temp-admin/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
+    <link rel="stylesheet" href="<?= base_url() ?>/temp-admin/vendor/DataTable/DataTables-1.10.21/css/jquery.dataTables.min.css">
+    
     <!-- Main CSS-->
     <link href="<?php echo base_url() ?>/temp-admin/css/theme.css" rel="stylesheet" media="all">
-
 </head>

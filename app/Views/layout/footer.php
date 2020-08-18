@@ -1,8 +1,8 @@
         </div>
     </div>
-
-    <!-- Jquery JS-->
     <script src="<?= base_url() ?>/temp-admin/vendor/jquery-3.2.1.min.js"></script>
+    <script src="<?= base_url() ?>/temp-admin/vendor/DataTable/DataTables-1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url() ?>//temp-admin/js/dataTable.js"></script>
     <!-- Bootstrap JS-->
     <script src="<?= base_url() ?>/temp-admin/vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="<?= base_url() ?>/temp-admin/vendor/bootstrap-4.1/bootstrap.min.js"></script>
@@ -20,13 +20,11 @@
     <script src="<?= base_url() ?>/temp-admin/vendor/select2/select2.min.js"></script>
     <script src="<?= base_url() ?>/temp-admin/js/progress.js"></script>
     <script src="<?= base_url() ?>/temp-admin/js/newform.js"></script>
-    <script src="<?= base_url() ?>/temp-admin/js/bootstrap-datetimepicker.js"></script>
-
-    <!-- Main JS-->
+    <script src="<?= base_url() ?>/temp-admin/js/alert.js"></script>
+    <script src="<?= base_url() ?>/temp-admin/vendor/ckeditor/ckeditor.js"></script>
+    <!-- main js -->
     <script src="<?= base_url() ?>/temp-admin/js/main.js"></script>
     <script src="<?= base_url() ?>/../assets/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="<?= base_url() ?>/../assets/sweetalert/alert.js"></script>
-
 </body>
 
 </html>

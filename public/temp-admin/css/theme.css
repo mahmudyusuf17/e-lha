@@ -152,7 +152,7 @@ strong {
     font-weight: 700;
 }
 
-text-hitam{
+.text-hitam{
     color: #000000;
 }
 /*-----------------------------------------------------*/
@@ -14716,6 +14716,13 @@ content: none;
 .img-banner{
     width: 380px;
     height: 320px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-header{
+    width: 380px;
     display: block;
     margin-left: auto;
     margin-right: auto;

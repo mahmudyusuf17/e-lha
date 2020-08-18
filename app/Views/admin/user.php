@@ -74,7 +74,7 @@
                                                 <td><?= $no++ ?></td>
                                                 <td><?= $value['name']; ?></td>
                                                 <td><?= $value['email']; ?></td>
-                                                <td><?= $value['name']; ?></td>
+                                                <td><?= $value['name_role']; ?></td>
 												<td><?= $value['created_at']; ?></td>
                                                 <td width="20px"><?= anchor('user/data_user/'. $value['user_id'], '<button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></button>') ?></td>
                                                 <td width="20px"><?= anchor('user/edit_user/'. $value['user_id'], '<button type="submit" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></button>') ?></td>

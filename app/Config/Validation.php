@@ -61,6 +61,8 @@ class Validation
 			'matches' => 'Konfirmasi Password Tidak Sama'
 		],
 	];
+
+	//validation user login
 	public $login = [
         'email' => 'required|min_length[3]|valid_email',
         'password' => 'required|min_length[3]',
@@ -74,6 +76,30 @@ class Validation
 		'password' => [
 			'required' => 'Password Wajib Diisi dan Tidak Boleh Kosong',
 			'min_length' => 'Password Terlalu Pendek'
+		],
+	];
+
+	// validation surat tugas
+	public $surat = [
+        'judul' => 'required|min_length[3]',
+	];
+	public $surat_errors = [
+		'judul' => [
+			'required' => 'Judul Wajib Diisi dan Tidak Boleh Kosong',
+			'min_length' => 'Judul Terlalu Pendek',
+			
+		],
+	];
+	
+	// validation input team
+	public $team = [
+        'nip' => 'required|min_length[3]',
+	];
+	public $team_errors = [
+		'nip' => [
+			'required' => 'NIP Wajib Diisi dan Tidak Boleh Kosong',
+			'min_length' => 'NIP Terlalu Pendek',
+			
 		],
 	];
 }

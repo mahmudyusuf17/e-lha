@@ -58,8 +58,11 @@ class Auth extends BaseController
     {
         $data = [
             'id' => $login['id'],
+            'nip' => $login['nip'],
             'nama' => $login['name'],
             'email' => $login['email'],
+            'unit_kerja' => $login['unit_kerja'],
+            'jabatan' => $login['jabatan'],
             'created' => $login['created_at'],
             'updated' => $login['updated_at']
         ];

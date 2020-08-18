@@ -28,7 +28,15 @@
                                         <tr>
                                         <td><?= $no++ ?></td>
                                         <td><?= $data->no_surat ?></td>
-                                        <td><?= $data->n_status ?></td>
+                                        <td><?php if($data->n_status==1){
+                                        echo('Diterima');
+                                        } elseif ($data->n_status==2) {
+                                            echo('Ditolak');
+                                        }
+                                        else{
+                                        echo('Belum di review');
+                                        }
+                                        ?></td>
                                         <td class="text-center"><a href="<?= base_url()?>/view_tgspegawai/<?= $data->idSurtu ?>" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>
                                         </td>
                                         </tr>

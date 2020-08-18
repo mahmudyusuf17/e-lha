@@ -23,29 +23,6 @@ class User extends Controller
         }
     }
 
-    // public function view_user($id){
-    //     $user = new User_model();
-
-    //     $data = [
-    //         'title' => 'Data User',
-    //         'isi'   => 'admin/data_user',
-    //     ];
-        
-    //     if ($user->getResult() > 0) {
-    //         $row = $user->getRow();    
-
-    //     $data2 = [
-    //         'views'  => $user->data_user($id),
-    //         'id' => $id,
-    //         'nama' => $row->name,
-    //         'email' => $row->email,
-    //         'role_id' => $row->role_id,
-    //         'created_at' => $row->created_at,
-    //         'updated_at' => $row->updated_at
-    //     ];
-    //     echo view('layout/wrapper', $data);
-    //     }
-    // }
 
     public function data_user($id)
     {

@@ -22,7 +22,7 @@
                             <a class="js-arrow" href="<?php echo base_url('administrator/dashboard') ?>">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        <hr class="sidebar-divider">
+                        <!-- <hr class="sidebar-divider">
                         <div class="text-muted ml-2">PKPT</div>
                         <li>
                             <a href="<?php echo base_url('rekapaudit')?>">
@@ -40,7 +40,7 @@
                             <a href="<?php echo base_url('rekapaudit/pkpt_final')?>">
                                 <i class="far fa-check-square"></i>PKPT Final</a>
                         </li>
-                        <li>
+                        <li> -->
                         <hr class="sidebar-divider">
                         <div class="text-muted ml-2">Surat Tugas</div>
                         </li>
@@ -49,34 +49,34 @@
                                 <i class="fa fa-file"></i>Surat Tugas</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('surattugas/input_surtu')?>">
+                            <a href="<?php echo base_url('surattugas/input_surat_tugas')?>">
                                 <i class="fa fa-download"></i>Input Surat Tugas</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url('surattugas/view_tgspegawai')?>">
                                 <i class="fas fa-desktop"></i>View Tugas Pegawai</a>
                         </li>
-                        <hr class="sidebar-divider">
+                        <!-- <hr class="sidebar-divider">
                         <div class="text-muted ml-2">Laporan Hasil Audit (LHA)</div>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('') ?>">
+                            <a href="<?php echo base_url('lha') ?>">
                                 <i class="fa fa-file-text"></i>Program Kerja Audit</a>
                         </li>
                         <hr class="sidebar-divider">
                         <div class="text-muted ml-2">Laporan Hasil Evaluasi (LHE)</div>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('') ?>">
+                            <a href="<?php echo base_url('lhe') ?>">
                                 <i class="fa fa-copy"></i>Evaluasi Audit</a>
                         </li>
                         <hr class="sidebar-divider">
                         <div class="text-muted ml-2">Laporan Hasil Review (LHR)</div>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('') ?>">
+                            <a href="<?php echo base_url('lhr') ?>">
                                 <i class="fa fa-rotate-right"></i>Review Audit</a>
-                        </li>
+                        </li> -->
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-cog"></i>Pengaturan
@@ -117,7 +117,7 @@
                             <a class="js-arrow" href="<?php echo base_url() ?>">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        <h5><hr class="sidebar-divider"><div class="text-muted">PKPT</div></h5>
+                        <!-- <h5><hr class="sidebar-divider"><div class="text-muted">PKPT</div></h5>
                         <li>
                             <a href="<?php echo base_url('rekapaudit')?>">
                                 <i class="fas fa-folder"></i>Rekap Audit</a>
@@ -134,7 +134,7 @@
                             <a href="<?php echo base_url('rekapaudit/pkpt_final')?>">
                                 <i class="far fa-check-square"></i>PKPT Final</a>
                         </li>
-                        <li>
+                        <li> -->
                         <h5><hr class="sidebar-divider">
                         <div class="text-muted">Surat Tugas</div></h5>
                         </li>
@@ -143,34 +143,34 @@
                                 <i class="fa fa-file"></i>Surat Tugas</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('surattugas/input_surtu')?>">
+                            <a href="<?php echo base_url('surattugas/input_surat_tugas')?>">
                                 <i class="fa fa-download"></i>Input Surat Tugas</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url('surattugas/view_tgspegawai')?>">
                                 <i class="fas fa-desktop"></i>View Tugas Pegawai</a>
                         </li>
-                        <h5><hr class="sidebar-divider">
+                        <!-- <h5><hr class="sidebar-divider">
                         <div class="text-muted">Laporan Hasil Audit (LHA)</div></h5>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('') ?>">
+                            <a href="<?php echo base_url('lha') ?>">
                                 <i class="fa fa-file-text"></i>Program Kerja Audit</a>
                         </li>
                         <hr class="sidebar-divider">
                         <h5><div class="text-muted">Laporan Hasil Evaluasi (LHE)</div></h5>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('') ?>">
+                            <a href="<?php echo base_url('lhe') ?>">
                                 <i class="fa fa-copy"></i>Evaluasi Audit</a>
                         </li>
                         <hr class="sidebar-divider">
                         <h5><div class="text-muted">Laporan Hasil Review (LHR)</div></h5>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('') ?>">
+                            <a href="<?php echo base_url('lhr') ?>">
                                 <i class="fa fa-rotate-right"></i>Review Audit</a>
-                        </li>
+                        </li> -->
                         <hr class="sidebar-divider">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">

@@ -39,11 +39,11 @@
                                         <td><?= $data->maker ?></td>
                                         <td><?= $data->approval ?></td>
                                         <td><?= $data->signer ?></td>
-                                        <td class="text-center"><a href="<?= base_url()?>/user/hapus_data/<?= $data->idSurtu ?>" class="btn btn-sm btn-success mb-2"><i class="fa fa-edit"></i></a>
-                                        <a href="<?= base_url()?>/user/hapus_data/<?= $data->idSurtu ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin Hapus Data?')"><i class="fa fa-trash"></i></a>
+                                        <td class="text-center"><a href="<?= base_url()?>/surattugas/edit_surat_tugas/<?= $data->idSurtu ?>" class="btn btn-sm btn-success mb-2"><i class="fa fa-edit"></i></a>
+                                        <button class="btn btn-sm btn-danger" type="button" onclick="hapus_surat('<?= $data->idSurtu ?>')"><i class="fa fa-trash"></i></button>
                                         </td>
-                                        <td class="text-center"><a href="<?= base_url()?>/user/hapus_data/<?= $data->idSurtu ?>" class="btn btn-sm btn-primary mb-2"><i class="fa fa-users"></i></a>
-                                        <a href="<?= base_url()?>/user/hapus_data/<?= $data->idSurtu ?>" class="btn btn-sm btn-warning"><i class="fa fa-book"></i></a>
+                                        <td class="text-center"><a href="<?= base_url()?>/surattugas/edit_team/<?= $data->idSurtu ?>" class="btn btn-sm btn-primary mb-2"><i class="fa fa-users"></i></a>
+                                        <a href="<?= base_url()?>/surattugas/preview_edit/<?= $data->idSurtu ?>" class="btn btn-sm btn-warning"><i class="fa fa-book"></i></a>
                                         </td>
                                         </tr>
                                     <?php } ?>

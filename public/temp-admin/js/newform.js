@@ -1,25 +1,13 @@
-// $(document).ready(function(){
 
-
-// 	function tambahform(){
-// 		var isi = '<div id="tambahform" style="display:none">';
-
-// 		isi += '<div class="input"><input type="text" name="nama'+n+'" required placeholder="Nama Lengkap ke-'+n+'"></div><div class="input"><input type="text" name="alamat'+n+'" required placeholder="Alamat ke-'+n+'"></div><div class="input"><input type="email" name="email'+n+'" required placeholder="Email ke-'+n+'"></div><div class="input"><input type="text" name="no_hp'+n+'" required placeholder="Nomor Handphone ke-'+n+'"></div>';
-
-// 		isi += '</div>';
-
-// 		$('a.tambahform').before(isi);
-// 		$('#tambahform'+total_member).slideDown('medium');
-
-// 		total_member++;
-// 	}
-
-// 	function hapusMember(){
-// 		total_member--;
-// 		if(total_member<=1){
-// 			total_member = 1;
-// 		}
-// 		$('#tambahform'+total_member).slideUp('medium', function(){
-// 			$(this).remove();
-// 		});
-// 	}
+$(document).ready(function(){
+	var i=1;
+	$('#add').click(function(){
+		i++;
+		$('#dynamic_field').append('<tr id="row'+i+'"><td>'+i+'</td><td><input type="text" id="nip" name="nip" class="form-control form-control-sm" required></td><td><input type="text" id="nama" name="nama" class="form-control form-control-sm" required></td><td><input type="text" id="unit" name="unit" class="form-control form-control-sm" required></td><td><input type="text" id="jabatan" name="jabatan" class="form-control form-control-sm" required></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove btn-sm">x</button></td></tr>');
+	});
+	
+	$(document).on('click', '.btn_remove', function(){
+		var button_id = $(this).attr("id"); 
+		$('#row'+button_id+'').remove();
+	});
+});
