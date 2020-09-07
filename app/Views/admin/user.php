@@ -46,8 +46,8 @@
 								<div class="card">
 									<div class="card-header overview-wrap">
 										<h3><i class="mr-2 fas fa-users"></i><strong class="card-title" v-if="headerText">Data Users</strong></h3>
-                                        <button type="button" class="au-btn au-btn-icon au-btn--blue btn-sm overview-item--c5" data-toggle="modal" data-target="#scrollmodal" aria-labelledby="scrollmodalLabel">
-                                        <i class="zmdi zmdi-plus"></i>Tambah User</button> 
+                                        <!-- <button type="button" class="au-btn au-btn-icon au-btn--blue btn-sm overview-item--c5" data-toggle="modal" data-target="#scrollmodal" aria-labelledby="scrollmodalLabel">
+                                        <i class="zmdi zmdi-plus"></i>Tambah User</button>  -->
 									</div>
                                 <div class="card-body">
                                 <div class="row">
@@ -60,8 +60,8 @@
                                                 <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Email</th>
+												<th>NIP</th>
 												<th>Role</th>
-												<th>Created At</th>
                                                 <th colspan="3">Action</th>
                                             </tr>
                                         </thead>
@@ -74,16 +74,34 @@
                                                 <td><?= $no++ ?></td>
                                                 <td><?= $value['name']; ?></td>
                                                 <td><?= $value['email']; ?></td>
+												<td><?= $value['nip']; ?></td>
                                                 <td><?= $value['name_role']; ?></td>
-												<td><?= $value['created_at']; ?></td>
                                                 <td width="20px"><?= anchor('user/data_user/'. $value['user_id'], '<button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></button>') ?></td>
                                                 <td width="20px"><?= anchor('user/edit_user/'. $value['user_id'], '<button type="submit" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></button>') ?></td>
                                                 <td><button class="btn btn-sm btn-danger tombol-hapus" onclick="hapus('<?= $value['id']; ?>');"><i class="fa fa-trash"></i></button></td>
-                                                <!-- <td><a href="<?= base_url()?>/user/hapus_data/<?= $value['id']; ?>" class="btn btn-sm btn-danger tombol-hapus" onclick="return confirm('Yakin Hapus Data?')"><i class="fa fa-trash"></i></a></td> -->
                                             </tr>
                                         <?php endforeach; ?>
                                         </tbody>
                                     </table>
+                                    <script>
+                                    function hapus(id){
+                                        Swal.fire({
+                                            title: 'Hapus User?',
+                                            text: "User Akan Dihapus!!!",
+                                            icon: 'warning',
+                                            showCancelButton: true,
+                                            confirmButtonColor: '#3085d6',
+                                            cancelButtonColor: '#d33',
+                                            confirmButtonText: 'Ya, Hapus!'
+                                        }).then((result) => {
+                                            if (result.value) {
+                                            window.location.href = ("user/delete/")+ id;
+                                            }else{
+                                                return false;
+                                            }
+                                        });
+                                    }
+                                    </script>
                                 </div>
                                 <!-- END DATA TABLE-->
                                         </div>
@@ -94,7 +112,7 @@
 					</div>
 				</div>
 			</div>
-            <!-- modal scroll tambah data-->
+            <!-- modal scroll tambah data
 			<div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-md" role="document">
 					<div class="modal-content offset-md-1">
@@ -166,5 +184,5 @@
                                     </div>
                                     </div>
                                         </form>
-                                </div>
+                                </div> -->
                     <!-- end of form -->

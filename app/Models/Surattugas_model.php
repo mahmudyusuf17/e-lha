@@ -55,6 +55,8 @@ class Surattugas_model extends Model
             'nama' => $data['nama'],
             'unit_kerja' => $data['unit'],
             'jabatan' => $data['jabatan'],
+            'tgl_awal' => $data['tgl_awal'],
+            'tgl_akhir' => $data['tgl_akhir'],
             'create_time' => date('Y-m-d H:i:s'),
             'update_time' => date('Y-m-d H:i:s')
         ]);
@@ -72,7 +74,8 @@ class Surattugas_model extends Model
     }
 
     function delete_surtu($idSurtu){
-        return $this->db->table('surat_tugas')->delete(array('idSurtu' => $idSurtu));
+        $this->db->table('surat_tugas')->delete(array('idSurtu' => $idSurtu));
+        return $this->db->table('peserta')->delete(array('idSurtu' => $idSurtu));
     }
 
     function delete_team($id){

@@ -15,30 +15,31 @@
                                     <table class="table table-bordered table-sm">
                                     <thead>
                                         <tr class="text-center">
-                                        <th scope="col" rowspan="2">Kegiatan</th>
-                                        <th scope="col" rowspan="2">Klasifikasi Surat</th>
-                                        <th scope="col" rowspan="2">Tanggal Awal</th>
-                                        <th scope="col" rowspan="2">Tanggal Akhir</th>
-                                        <th scope="col" colspan="3">Tahapan</th>
-                                        <th scope="col" rowspan="2" colspan="2">Aksi</th>
-                                        </tr>
-                                        <tr>
-                                        <th>Pembuatan</th>
-                                        <th>Approval</th>
-                                        <th>Penandatanganan</th>
-                                        </tr>
+                                        <th scope="col">Judul</th>
+                                        <th scope="col">Tanggal Awal</th>
+                                        <th scope="col">Tanggal Akhir</th>
+                                        <th scope="col">Kepada</th>
+                                        <th scope="col">Untuk</th>
+                                        <th scope="col">Status Surat</th>
+                                        <th scope="col" colspan="2">Aksi</th>
                                     </thead>
                                     <tbody>
                                     <?php 
                                         foreach($surat as $data) { ?>
                                         <tr>
-                                        <td><?= $data->keterangan_klasifikasi_surat ?></td>
-                                        <td><?= $data->klasifikasi_surat ?></td>
-                                        <td><?= $data->tgl_awal ?></td>
-                                        <td><?= $data->tgl_akhir ?></td>
-                                        <td><?= $data->maker ?></td>
-                                        <td><?= $data->approval ?></td>
-                                        <td><?= $data->signer ?></td>
+                                        <td><?= $data->judul ?></td>
+                                        <td><?= tgl_indo($data->tgl_awal) ?></td>
+                                        <td><?= tgl_indo($data->tgl_akhir) ?></td>
+                                        <td><?= htmlspecialchars_decode(htmlspecialchars_decode($data->kepada)) ?></td>
+                                        <td><?= htmlspecialchars_decode(htmlspecialchars_decode($data->untuk)) ?></td>
+                                        <td><?php if($data->n_status==1){
+                                            echo('&#10004;&#65039;<br>Diterima');
+                                        }elseif($data->n_status==2){
+                                            echo('&#10060<br>Ditolak');
+                                        }elseif($data->n_status==0){
+                                            echo('&#10067;<br>Belum Ditetapkan');
+                                        }
+                                        ?></td>
                                         <td class="text-center"><a href="<?= base_url()?>/surattugas/edit_surat_tugas/<?= $data->idSurtu ?>" class="btn btn-sm btn-success mb-2"><i class="fa fa-edit"></i></a>
                                         <button class="btn btn-sm btn-danger" type="button" onclick="hapus_surat('<?= $data->idSurtu ?>')"><i class="fa fa-trash"></i></button>
                                         </td>

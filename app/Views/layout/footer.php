@@ -21,6 +21,7 @@
     <script src="<?= base_url() ?>/temp-admin/js/progress.js"></script>
     <script src="<?= base_url() ?>/temp-admin/js/newform.js"></script>
     <script src="<?= base_url() ?>/temp-admin/js/alert.js"></script>
+    <script src="<?= base_url() ?>/temp-admin/js/show.js"></script>
     <script src="<?= base_url() ?>/temp-admin/vendor/ckeditor/ckeditor.js"></script>
     <!-- main js -->
     <script src="<?= base_url() ?>/temp-admin/js/main.js"></script>

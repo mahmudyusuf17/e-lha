@@ -11,7 +11,7 @@ class SuratTugas extends BaseController
         if (session()->get('email')=='') {
             return redirect()->to(base_url('auth'));
         }
-
+        helper('tanggal');
         $model = new Surattugas_model();
         $data = [
             'title'         => 'Surat Tugas',
@@ -91,6 +91,7 @@ class SuratTugas extends BaseController
         if (session()->get('email')=='') {
             return redirect()->to(base_url('auth'));
         }
+        helper('tanggal');
         $model = new Surattugas_model();
         $data = [
             'title'         => 'Input Team',
@@ -101,30 +102,31 @@ class SuratTugas extends BaseController
         echo view('layout/wrapper', $data);
     }
 
-    public function input_datateam($idSurtu)
-    {
-        $validation = \Config\Services::validation();
-        $data = [
-            'nip'               => htmlspecialchars($this->request->getpost('nip')),
-            'nama'              => htmlspecialchars($this->request->getpost('nama')),
-            'unit'              => htmlspecialchars($this->request->getpost('unit')),
-            'jabatan'           => htmlspecialchars($this->request->getpost('jabatan')),
-            
-        ];
+    // public function input_datateam($idSurtu)
+    // {
+    //     $validation = \Config\Services::validation();
+    //     $data = [
+    //         'nip'               => htmlspecialchars($this->request->getpost('nip')),
+    //         'nama'              => htmlspecialchars($this->request->getpost('nama')),
+    //         'unit'              => htmlspecialchars($this->request->getpost('unit')),
+    //         'jabatan'           => htmlspecialchars($this->request->getpost('jabatan')),
+    //         'tgl_awal'          => htmlspecialchars($this->request->getpost('tgl_awal')),
+    //         'tgl_akhir'         => htmlspecialchars($this->request->getpost('tgl_akhir')),
+    //     ];
         
-        if ($validation->run($data, 'team')==false) {
-            session()->setFlashdata('errors', $validation->getErrors());
-            return redirect()->to(base_url('surattugas/input_team/'.$idSurtu));
-        }else{
-            $surat = new Surattugas_model();
-            $input = $surat->input_team($data, $idSurtu);
-            if ($input){
-                session()->setFlashdata('sukses', $this->request->getpost());
-                return redirect()->to(base_url('surattugas/input_team/'.$idSurtu));
+    //     if ($validation->run($data, 'team')==false) {
+    //         session()->setFlashdata('errors', $validation->getErrors());
+    //         return redirect()->to(base_url('surattugas/input_team/'.$idSurtu));
+    //     }else{
+    //         $surat = new Surattugas_model();
+    //         $input = $surat->input_team($data, $idSurtu);
+    //         if ($input){
+    //             session()->setFlashdata('sukses', $this->request->getpost());
+    //             return redirect()->to(base_url('surattugas/input_team/'.$idSurtu));
                 
-            }
-        }
-    }
+    //         }
+    //     }
+    // }
 
     public function preview($idSurtu)
     {
@@ -139,7 +141,6 @@ class SuratTugas extends BaseController
             'isi'           => 'surattugas/preview'
         ];
         echo view('layout/wrapper', $data);
-        
     }
 
     public function pdf($idSurtu)
@@ -147,6 +148,7 @@ class SuratTugas extends BaseController
         if (session()->get('email')=='') {
             return redirect()->to(base_url('auth'));
         }
+        helper('tanggal');
         $options = new Options();
         $options->set('isRemoteEnabled',true);      
         $dompdf = new Dompdf($options);
@@ -155,6 +157,7 @@ class SuratTugas extends BaseController
             'surat'         => $model->ambil_data($idSurtu)->getRow(),
             'team'          => $model->data_team($idSurtu)->getResult(),
         ];
+        // $judul = $this->request->getVar('judul');
         $html = view('surattugas/pdf_surtu', $data);
         $dompdf->loadHtml($html);
         // (Optional) Setup the paper size and orientation
@@ -170,6 +173,7 @@ class SuratTugas extends BaseController
         if (session()->get('email')=='') {
             return redirect()->to(base_url('auth'));
         }
+        helper('tanggal');
         $options = new Options();
         $options->set('isRemoteEnabled',true);      
         $dompdf = new Dompdf($options);
@@ -187,8 +191,6 @@ class SuratTugas extends BaseController
         $dompdf->render();
         // Output the generated PDF to Browser
         $dompdf->stream('surat tugas.pdf', array('Attachment' =>1));
-        return;
-
     }
 
     public function preview_edit($idSurtu)
@@ -259,6 +261,7 @@ class SuratTugas extends BaseController
         if (session()->get('email')=='') {
             return redirect()->to(base_url('auth'));
         }
+        helper('tanggal');
         $model = new Surattugas_model();
         $data = [
             'title'         => 'Edit Team',
@@ -291,7 +294,8 @@ class SuratTugas extends BaseController
             'nama'              => htmlspecialchars($this->request->getpost('nama')),
             'unit'              => htmlspecialchars($this->request->getpost('unit_kerja')),
             'jabatan'           => htmlspecialchars($this->request->getpost('jabatan')),
-            
+            'tgl_awal'          => htmlspecialchars($this->request->getpost('tgl_awal')),
+            'tgl_akhir'         => htmlspecialchars($this->request->getpost('tgl_akhir')),
         ];
         
         if ($validation->run($data, 'team')==false) {
@@ -303,7 +307,6 @@ class SuratTugas extends BaseController
             if ($input){
                 session()->setFlashdata('sukses', $this->request->getpost());
                 return redirect()->to(base_url('surattugas/input_team/'.$idSurtu));
-                
             }
         }
     }
@@ -350,38 +353,38 @@ class SuratTugas extends BaseController
 
     }
 
-    public function input_data_team()
-    {
-        $validation = \Config\Services::validation();
+    // public function input_data_team()
+    // {
+    //     $validation = \Config\Services::validation();
 
-        $nip                = htmlspecialchars($this->request->getpost('nip'));
-        $nama               = htmlspecialchars($this->request->getpost('nama'));
-        $unit               = htmlspecialchars($this->request->getpost('unit'));
-        $jabatan            = htmlspecialchars($this->request->getpost('jabatan'));
+    //     $nip                = htmlspecialchars($this->request->getpost('nip'));
+    //     $nama               = htmlspecialchars($this->request->getpost('nama'));
+    //     $unit               = htmlspecialchars($this->request->getpost('unit'));
+    //     $jabatan            = htmlspecialchars($this->request->getpost('jabatan'));
         
-        $data = [
-            'nip'              => $nip,
-            'nama'           => $nama,
-            'unit'          => $unit,
-            'jabatan'              => $jabatan,
+    //     $data = [
+    //         'nip'              => $nip,
+    //         'nama'           => $nama,
+    //         'unit'          => $unit,
+    //         'jabatan'              => $jabatan,
             
-        ];
+    //     ];
 
         
-        if ($validation->run($data, 'team')==false) {
-            session()->setFlashdata('errors', $validation->getErrors());
-            return redirect()->to(base_url('surattugas/input_surtu'));
-        }else{
-            $surat = new Surattugas_model();
-            $input = $surat->input_team($data);
+    //     if ($validation->run($data, 'team')==false) {
+    //         session()->setFlashdata('errors', $validation->getErrors());
+    //         return redirect()->to(base_url('surattugas/input_surtu'));
+    //     }else{
+    //         $surat = new Surattugas_model();
+    //         $input = $surat->input_team($data);
         
-            if ($input){
-                session()->setFlashdata('team', $this->request->getpost());
-                return redirect()->to(base_url('surattugas/input_surtu'));
+    //         if ($input){
+    //             session()->setFlashdata('team', $this->request->getpost());
+    //             return redirect()->to(base_url('surattugas/input_surtu'));
                 
-            }
-        }
-    }
+    //         }
+    //     }
+    // }
 
     public function view_tgspegawai()
     {

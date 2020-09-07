@@ -23,6 +23,47 @@ class User extends Controller
         }
     }
 
+    public function registration()
+    {
+        $data = [
+            'title' => 'Registrasi User',
+            'isi'   => 'admin/registrasi'
+        ];
+        echo view('layout/login', $data);
+        
+        // session berhasil login
+        if (!session()->get('email')=='') {
+            return redirect()->to(base_url('dashboard'));
+        }
+    }
+
+    public function registrasi()
+    {
+        $validation = \Config\Services::validation();
+        $data = [
+            'nip'               => htmlspecialchars($this->request->getpost('nip')),
+            'nama'              => htmlspecialchars($this->request->getpost('nama')),
+            'email'             => htmlspecialchars($this->request->getpost('email')),
+            'password'          => htmlspecialchars($this->request->getpost('password')),
+            'confirm_pass'   => htmlspecialchars($this->request->getpost('password2')),
+            'unit_kerja'        => htmlspecialchars($this->request->getpost('unit_kerja')),
+            'jabatan'           => htmlspecialchars($this->request->getpost('jabatan')),
+        ];
+        
+        if ($validation->run($data, 'user')==false) {
+            session()->setFlashdata('errors', $validation->getErrors());
+            return redirect()->to(base_url('user/registration'));
+        }else{
+            $user = new User_model();
+            $input = $user->tambah_user($data);
+            if ($input){
+                session()->setFlashdata('berhasil_regis', $this->request->getpost());
+                return redirect()->to(base_url('auth'));
+                
+            }
+        }
+    }
+
 
     public function data_user($id)
     {
@@ -81,10 +122,34 @@ class User extends Controller
         
     }
 
+    public function update_user($id)
+    {
+        $validation = \Config\Services::validation();
+        $data = [
+            'nip'               => htmlspecialchars($this->request->getpost('nip')),
+            'name'              => htmlspecialchars($this->request->getpost('name')),
+            'email'             => htmlspecialchars($this->request->getpost('email')),
+            'unit_kerja'        => htmlspecialchars($this->request->getpost('unit_kerja')),
+            'jabatan'           => htmlspecialchars($this->request->getpost('jabatan')),
+            'updated_at'        => date('Y-m-d H:i:s')
+        ];
+        if ($validation->run($data, 'user_edit')==false) {
+            session()->setFlashdata('errors', $validation->getErrors());
+            return redirect()->to(base_url('user/edit_user/'.$id));
+        }else{
+            $user = new User_model();
+            $tambah = $user->update_user($data, $id);
+        
+            if ($tambah){
+                session()->setFlashdata('sukses', $this->request->getpost());
+                return redirect()->to(base_url('user/edit_user/'.$id));
+            }
+        }
+
+    }
+
     public function delete($id)
     {
-        // $url = service('url');
-        // $id = $url->getSegment('3');
         $user = new User_model();
         $user->delete_user($id);
         session()->setFlashdata('hapus', 'Data User Telah Dihapus');

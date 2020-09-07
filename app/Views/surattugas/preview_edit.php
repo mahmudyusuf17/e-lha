@@ -8,7 +8,7 @@
                                         <div class="container">
                                             <ul class="progressbar">
                                                 <li class="active"><a href="<?= base_url()?>/surattugas/edit_surat_tugas/<?= $surat->idSurtu?>"><span class="text-hitam">Update Data Surat Tugas</span></a></li>
-                                                <li class="active"><a href="<?= base_url()?>/surattugas/input_team/<?= $surat->idSurtu?>"><span class="text-hitam">Edit Team</span></a></li>
+                                                <li class="active"><a href="<?= base_url()?>/surattugas/edit_team/<?= $surat->idSurtu?>"><span class="text-hitam">Edit Team</span></a></li>
                                                 <li class="active">Preview</li>
                                             </ul>
                                         </div>

@@ -121,7 +121,7 @@
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3 text-right">
-                                                    <label for="tembusan" class=" form-control-label mt-3 text-hitam"><strong>Tembusan<span class="text-danger">*</span></strong></label>
+                                                    <label for="tembusan" class=" form-control-label mt-3 text-hitam"><strong>Tembusan</strong></label>
                                                 </div>
                                                 <div class="col col-md-9 text-right">
                                                         <textarea class="ckeditor" name="tembusan" id="ckeditor" required></textarea>

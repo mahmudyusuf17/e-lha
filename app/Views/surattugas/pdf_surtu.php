@@ -20,7 +20,7 @@
                                         <div class="col-md-10 ml-5">
                                             <hr style="border-bottom: 2px black solid;"></div>
                                             <div class="text-center h6"><u>SURAT - TUGAS</u></div>
-                                            <div class="text-center">Nomor : 33/ST/INSP/III/2020</div>
+                                            <div class="text-center">Nomor : <?= $surat->no_surat ?></div>
                                         <div class="col-md-12 my-2">
                                             <table class="table borderless">
                                                 <tr>
@@ -67,7 +67,7 @@
                                         <div class="col-md-12 mt-5">
                                         <div class="col-md-3 ml-auto mt-3">
                                             <div class="text-left">Lampiran <?= $surat->judul?></div>
-                                            <div class="text-left">Nomor   : 33/ST/INSP/III/2020</div>
+                                            <div class="text-left">Nomor   : <?= $surat->no_surat ?></div>
                                             <div class="text-left">Tanggal : 31 Juli 2020</div>
                                         </div>
                                         <div class="text-center h7 mt-4"><strong>SUSUNAN TIM EVALUASI LAKIP TAHUN ANGGARAN 2019</strong></div>
@@ -98,8 +98,12 @@
                                     <td><?= $data->jabatan?></td>
                                     <td><?= $data->unit_kerja?></td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?= tgl_bulan($surat->tgl_awal) . ' -' .tgl_indo($surat->tgl_akhir) ?></td>
+                                    <td><?php 	
+                                    $tgl1 = new DateTime($surat->tgl_awal); 	
+                                    $tgl2 = new DateTime($surat->tgl_akhir); 	
+                                    $d = $tgl2->diff($tgl1)->days + 1; 	echo $d." hari"; 
+                                    ?></td>
                                     </tr>
                                     <?php } ?>
                                     </tbody>

@@ -36,13 +36,13 @@ class Validation
 	
 	// validasi form user
 	public $user = [
-		'name' => 'required|min_length[3]',
+		'nama' => 'required|min_length[3]',
         'email' => 'required|min_length[3]|valid_email|is_unique[users.email]',
         'password' => 'required|min_length[3]',
         'confirm_pass' => 'required|matches[password]',
 	];
 	public $user_errors = [
-		'name' => [
+		'nama' => [
 			'required' => 'Nama Wajib Diisi dan Tidak Boleh Kosong',
 			'min_length' => 'Nama Terlalu Pendek'
 		],
@@ -60,6 +60,23 @@ class Validation
 			'required' => 'Konfirmasi Password Wajib Diisi dan Tidak Boleh Kosong',
 			'matches' => 'Konfirmasi Password Tidak Sama'
 		],
+	];
+
+	public $user_edit = [
+		'name' => 'required|min_length[3]',
+        'email' => 'required|min_length[3]|valid_email',
+	];
+	public $user_edit_errors = [
+		'name' => [
+			'required' => 'Nama Wajib Diisi dan Tidak Boleh Kosong',
+			'min_length' => 'Nama Terlalu Pendek'
+		],
+		'email' => [
+			'required' => 'Email Wajib Diisi dan Tidak Boleh Kosong',
+			'min_length' => 'Email Terlalu Pendek',
+			'valid_email' => 'Email Tidak Valid',
+		],
+		
 	];
 
 	//validation user login

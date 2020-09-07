@@ -27,17 +27,22 @@
                                         foreach($view as $data) { ?>
                                         <tr>
                                         <td><?= $no++ ?></td>
-                                        <td><?= $data->no_surat ?></td>
-                                        <td><?php if($data->n_status==1){
-                                        echo('Diterima');
-                                        } elseif ($data->n_status==2) {
-                                            echo('Ditolak');
-                                        }
-                                        else{
-                                        echo('Belum di review');
+                                        <td><?php if($data->no_surat == NULL){
+                                            echo('Belum ada nomor surat');
+                                        }else{
+                                            echo($data->no_surat);
                                         }
                                         ?></td>
-                                        <td class="text-center"><a href="<?= base_url()?>/view_tgspegawai/<?= $data->idSurtu ?>" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>
+                                        <td><?php if($data->n_status==1){
+                                        echo('&#10004;&#65039; Diterima');
+                                        } elseif ($data->n_status==2) {
+                                            echo('&#10060 Ditolak');
+                                        }
+                                        elseif ($data->n_status==0){
+                                        echo('&#10067; Belum Ditetapkan');
+                                        }
+                                        ?></td>
+                                        <td class="text-center"><a href="<?= base_url()?>/surattugas/pdf/<?= $data->idSurtu ?>" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>
                                         </td>
                                         </tr>
                                     <?php } ?>

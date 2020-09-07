@@ -10,7 +10,7 @@
                                 <div class="col-md-12">
 								<div class="jumbotron">
 									<h3>Hallo,</h3>
-									<a class="btn btn-primary btn-lg float-right" href="#" role="button">Cek Laporan</a>
+									<a class="btn btn-primary btn-lg float-right" href="<?= base_url('/surattugas')?>" role="button">Surat Tugas</a>
 									<h1 class="text-primary"><?= session()->get('nama') ?></h1>
 									<!-- <?= session()->get('created') ?> -->
 									<!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>

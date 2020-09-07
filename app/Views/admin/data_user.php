@@ -11,7 +11,7 @@
 									</div>
                                 <div class="card-body">
                                 <div class="row">
-                                <div class="col-md-3 mt-3">
+                                <div class="col-md-3 mt-4">
                                 <div class="card">
                                     <div class="image img-fluid img-thumbnail text-center">
                                         <img src="<?= base_url() ?>/../assets/avatar/avatar.jpg" alt="Mahmud Yusuf" />
@@ -19,31 +19,31 @@
                                         <h4 class="text-center mt-2 mb-2"><?= $data['name']; ?></h4>
                                 </div>
                                     <div class="text-center">
-                                    <button type="submit" class="btn btn-success btn-sm">
-                                            <i class="fa fa-edit"></i> Edit Data User
-                                        </button>
+                                    <a href="<?= base_url() ?>/user/edit_user/<?= $data['id']; ?>" class="btn btn-success btn-sm"><span class="fa fa-edit"></span> Edit Data User</a>
                                     </div>
                                 </div>
-                                <div class="col-lg-9">
+                                <div class="col-md-9">
                                     <div class="card-body card-block">
-                                    <?= form_open('user/edit_user/') ?>
-                                        <div class="form-group">
-                                            <label for="name" name="name" class=" form-control-label"><h5>Nama:</h5><?= $data['name']; ?></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email" name="email" class=" form-control-label"><h5>Email:</h5><?= $data['email']; ?></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="role" name="role" class=" form-control-label"><h5>Role:</h5></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="created_at" name="created_at" class=" form-control-label"><h5>Tanggal Dibuat:</h5><?= $data['created_at']; ?></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="updated_at" name="updated_at" class=" form-control-label"><h5>Terakhir Diperbaruhi:</h5><?= $data['updated_at']; ?></label>
+                                    <div class="row">
+                                        <div class="table-responsive m-b-40 mt-3">
+                                        <table class="table table-bordered">
+                                        <tbody>
+                                        <tr><td class="text-hitam"><strong>NIP</strong></td>
+                                        <td><?= $data['nip']; ?></td></tr>
+                                        <tr><td class="text-hitam" width="100px"><strong>Nama</strong></td>
+                                        <td><?= $data['name']; ?></td></tr>
+                                        <tr><td class="text-hitam"><strong>Email</strong></td>
+                                        <td><?= $data['email']; ?></td></tr>
+                                        <tr><td class="text-hitam"><strong>Jabatan</strong></td>
+                                        <td><?= $data['jabatan']; ?></td></tr>
+                                        <tr><td class="text-hitam"><strong>Unit Kerja</strong></td>
+                                        <td><?= $data['unit_kerja']; ?></td></tr>
+                                        <tr><td class="text-hitam"><strong>Tanggal Pembuatan</strong></td>
+                                        <td><?= $data['created_at']; ?></td></tr>
+                                        </tbody>
+                                        </table>
                                         </div>
                                     </div>
-                                    <? form_close()  ?>
 
                                 <!-- <div class="modal-footer">
                                         <button type="submit" class="btn btn-success btn-sm" onclick="return confirm('Apakah ingin hapus?')">

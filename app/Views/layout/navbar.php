@@ -15,7 +15,7 @@
                                 <div class="noti-wrap">
                                     <div class="noti__item js-item-menu">
                                         <i class="zmdi zmdi-notifications"></i>
-                                        <span class="quantity">2</span>
+                                        <!-- <span class="quantity">2</span> -->
                                         <div class="notifi-dropdown js-dropdown">
                                             <div class="notifi__title">
                                                 <p>You have 3 Notifications</p>
@@ -77,13 +77,13 @@
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
+                                                    <a href="<?= base_url() ?>/user/data_user/<?= session()->get('id') ?>">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
-                                                <div class="account-dropdown__item">
+                                                <!-- <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="<?= base_url('auth/logout') ?>">

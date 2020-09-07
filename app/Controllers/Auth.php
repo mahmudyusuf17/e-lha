@@ -40,7 +40,7 @@ class Auth extends BaseController
                 return redirect()->to(base_url('auth'));
             }
     
-        }
+    }
 
     private function exist($email, $password){
         $user  = new Data_model();

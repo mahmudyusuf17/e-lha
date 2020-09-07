@@ -10,6 +10,17 @@
                     
                     <div class="login-form">
                     <?php 
+                                    $sukses = session()->getFlashdata('berhasil_regis');
+                                    if (!empty($sukses)) {?>
+                                    <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
+                                        <span class="badge badge-pill badge-primary"><strong>Berhasil</strong></span>
+                                        Anda Berhasil Registrasi
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                            </div>
+                                    <?php } ?>
+                    <?php 
                                     $errors = session()->getFlashdata('errors');
                                     if (!empty($errors)) {?>
                                     <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
@@ -47,7 +58,10 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-asterisk"></i>
                             </div>
-                        <input type="password" id="password" name="password" placeholder="Password" class="form-control">
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control active">
+                        <div class="input-group-addon-white">
+                        <span id="icon" class="fa fa-eye-slash"></span>
+                        </div>
                         </div>
                         <div class="login-checkbox mt-3">
                             <label>

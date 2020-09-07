@@ -46,29 +46,19 @@
                                 <h5><i class="fa fa-users mr-2"></i>Input Team</h5>
                                 <hr>
                                 <div class="col-md-10 offset-md-1">
-                                
                                 <div class="row form-group">
                                     <div class="table-responsive m-b-40 mt-3">
                                     <table class="table table-bordered table-sm">
                                     <tbody>
-                                    <tr>
-                                    <td>Judul</td>
-                                    <td><?= $surat->judul?></td>
-                                    </tr>
-                                    <tr>
-                                    <td>Tanggal Awal</td>
-                                    <td><?= $surat->tgl_awal?></td>
-                                    </tr>
-                                    <tr>
-                                    <td>Tanggal Akhir</td>
-                                    <td><?= $surat->tgl_akhir?></td>
-                                    </tr>
-                                    <tr>
-                                    <td>Kepada</td>
-                                    <td><?= htmlspecialchars_decode(htmlspecialchars_decode($surat->kepada)) ?></td>
-                                    </tr>
-                                    <tr>
-                                    <td>Status Surat</td>
+                                    <tr><td>Judul</td>
+                                    <td><?= $surat->judul?></td></tr>
+                                    <tr><td>Tanggal Awal</td>
+                                    <td><?= tgl_indo($surat->tgl_awal)?></td></tr>
+                                    <tr><td>Tanggal Akhir</td>
+                                    <td><?= tgl_indo($surat->tgl_akhir)?></td></tr>
+                                    <tr><td>Kepada</td>
+                                    <td><?= htmlspecialchars_decode(htmlspecialchars_decode($surat->kepada)) ?></td></tr>
+                                    <tr><td>Status Surat</td>
                                     <td><?php if($surat->n_status==0){
                                         echo('Belum Ditetapkan');
                                         }elseif ($surat->n_status==1) {
@@ -77,12 +67,9 @@
                                         echo('Ditolak');
                                         }
                                         ?>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                    <td>Tembusan</td>
-                                    <td><?= htmlspecialchars_decode(htmlspecialchars_decode($surat->tembusan)) ?></td>
-                                    </tr>
+                                    </td></tr>
+                                    <tr><td>Tembusan</td>
+                                    <td><?= htmlspecialchars_decode(htmlspecialchars_decode($surat->tembusan)) ?></td></tr>
                                     </tbody>
                                     </table>
                                     </div>
@@ -157,6 +144,7 @@
                                     <div class="card-body">
                                         <form action="<?php echo base_url('surattugas/tambah_team/')?>/<?= $surat->idSurtu?>" method="post" class="form-horizontal">
                                         <div class="col-12">
+                                        <?= csrf_field() ?>
                                                 <input type="text" name="nip" class="form-control form-control-sm" value="<?= session()->get('nip') ?>" hidden>
                                                     <label for="nama" class="form-control-label mt-2 text-hitam"><strong>NAMA<span class="text-danger">*</span></strong></label>
                                                     <select name="nama" id="SelectLm" class="form-control">
@@ -165,6 +153,8 @@
                                                     </select>
                                                     <input type="text" name="unit_kerja" class="form-control form-control-sm" value="<?= session()->get('unit_kerja') ?>" hidden>
                                                     <input type="text" name="jabatan" class="form-control form-control-sm" value="<?= session()->get('jabatan') ?>" hidden>
+                                                    <input type="text" name="tgl_awal" class="form-control form-control-sm" value="<?= $surat->tgl_awal ?>" hidden>
+                                                    <input type="text" name="tgl_akhir" class="form-control form-control-sm" value="<?= $surat->tgl_akhir ?>" hidden>
                                                 </div>
                                     </div>
                                     <div class="modal-footer">

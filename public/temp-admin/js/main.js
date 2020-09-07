@@ -1256,17 +1256,17 @@
     // USE STRICT
     "use strict";
     $(".animsition").animsition({
-      inClass: 'fade-in',
-      outClass: 'fade-out',
-      inDuration: 900,
-      outDuration: 900,
+      // inClass: 'fade-in',
+      // outClass: 'fade-out',
+      inDuration: 100,
+      outDuration: 100,
       linkElement: 'a:not([target="_blank"]):not([href^="#"]):not([class^="chosen-single"]):not([class^="cke_button"]):not([class^="cke_toolbox"]):not([class^="cke_toolgroup"]):not([class^="cke_combo_button"]):not([class^="cke_dialog_close_button"]):not([class^="cke_dialog_ui_hbox"]):not([class^="paginate_button"])',
       loading: true,
       loadingParentElement: 'html',
       loadingClass: 'page-loader',
       loadingInner: '<div class="page-loader__spin"></div>',
       timeout: false,
-      timeoutCountdown: 5000,
+      timeoutCountdown: 1000,
       onLoadEvent: true,
       browser: ['animation-duration', '-webkit-animation-duration'],
       overlay: false,

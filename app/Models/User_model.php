@@ -26,8 +26,9 @@ class User_model extends Model
         return $this->db->table('role_user')
         ->join('users', 'users.id = role_user.user_id')
         ->join('roles', 'roles.id = role_user.role_id')
-        ->getWhere(['role_user.user_id' => $id])
-        ->get();
+        ->where(['user_id' => $id])
+        ->getRow();
+        
     }
 
     function data_user($id)
@@ -35,16 +36,19 @@ class User_model extends Model
         return $this->db->table('users')->getWhere(['id' => $id]);
     }
 
-    function update_user($id)
+    function update_user($data, $id)
     {
         return $this->db->table('users')->update($data, ['id' => $id]);
     }
 
     function tambah_user($data){
         return $this->db->table('users')->insert([
-            'name'         => $data['name'],
+            'nip'          => $data['nip'],
+            'name'         => $data['nama'],
             'email'        => $data['email'],
             'password'     => password_hash($data['password'], PASSWORD_BCRYPT),
+            'unit_kerja'  => $data['unit_kerja'],
+            'jabatan' => $data['jabatan'],
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -56,6 +60,7 @@ class User_model extends Model
 
     function delete_user($id)
     {
-        return $this->db->table('users')->delete(array('id' => $id));
+        $this->db->table('users')->delete(array('id' => $id));
+        return $this->db->table('role_user')->delete(array('user_id' => $id));
     }
 }   

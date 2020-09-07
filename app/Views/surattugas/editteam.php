@@ -57,11 +57,11 @@
                                     </tr>
                                     <tr>
                                     <td>Tanggal Awal</td>
-                                    <td><?= $surat->tgl_awal?></td>
+                                    <td><?= tgl_indo($surat->tgl_awal)?></td>
                                     </tr>
                                     <tr>
                                     <td>Tanggal Akhir</td>
-                                    <td><?= $surat->tgl_akhir?></td>
+                                    <td><?= tgl_indo($surat->tgl_akhir)?></td>
                                     </tr>
                                     <tr>
                                     <td>Kepada</td>
@@ -165,6 +165,8 @@
                                                     </select>
                                                     <input type="text" name="unit_kerja" class="form-control form-control-sm" value="<?= session()->get('unit_kerja') ?>" hidden>
                                                     <input type="text" name="jabatan" class="form-control form-control-sm" value="<?= session()->get('jabatan') ?>" hidden>
+                                                    <input type="text" name="tgl_awal" class="form-control form-control-sm" value="<?= $surat->tgl_awal ?>" hidden>
+                                                    <input type="text" name="tgl_akhir" class="form-control form-control-sm" value="<?= $surat->tgl_akhir ?>" hidden>
                                                 </div>
                                     </div>
                                     <div class="modal-footer">

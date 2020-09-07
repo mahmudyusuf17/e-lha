@@ -172,7 +172,7 @@
                                 <i class="fa fa-rotate-right"></i>Review Audit</a>
                         </li> -->
                         <hr class="sidebar-divider">
-                        <li class="has-sub">
+                        <!-- <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-cog"></i>Pengaturan
                                 <span class="arrow ml-5">
@@ -186,7 +186,7 @@
                                     <a href="forget-pass.html"><i class="fa fa-user-circle"></i>Forget Password</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="<?= base_url('auth/logout') ?>">
                                 <i class="fa fa-sign-out-alt"></i>Log Out</a>

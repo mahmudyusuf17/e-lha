@@ -20,7 +20,7 @@
                                 <hr>
                                 <div class="col-md-10 offset-md-1">
                                 <a href="<?= base_url()?>/surattugas/pdf/<?= $surat->idSurtu?>" class="btn btn-success btn-sm float-right" type="button"><i class="fa fa-print"> Print</i></a>
-                                <a href="<?= base_url()?>/surattugas/download_pdf/<?= $surat->idSurtu?>" class="btn btn-primary btn-sm float-right mr-2" type="button"><i class="fa fa-download"> Export</i></a>
+                                <!-- <a href="<?= base_url()?>/surattugas/download_pdf/<?= $surat->idSurtu?>" class="btn btn-primary btn-sm float-right mr-2" type="button"><i class="fa fa-download"> Export</i></a> -->
                                 <form method="post" id="formpreview">
                                 <h5>Preview Surat Tugas</h5><hr>
                                 <div class="col-md-12">
