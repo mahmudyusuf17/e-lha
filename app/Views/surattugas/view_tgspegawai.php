@@ -42,8 +42,14 @@
                                         echo('&#10067; Belum Ditetapkan');
                                         }
                                         ?></td>
+                                        <?php if ($data->n_status == 1) { ?>
                                         <td class="text-center"><a href="<?= base_url()?>/surattugas/pdf/<?= $data->idSurtu ?>" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>
                                         </td>
+                                        <?php } ?>
+                                        <?php if ($data->n_status != 1) { ?>
+                                        <td class="text-center"><button class="btn btn-sm btn-primary" disabled><i class="fa fa-eye"></i> View</button>
+                                        </td>
+                                        <?php } ?>
                                         </tr>
                                     <?php } ?>
                                     </tbody>

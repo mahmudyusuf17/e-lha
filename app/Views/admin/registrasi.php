@@ -52,6 +52,7 @@
                                                     <input type="text" id="nama" name="nama" class="form-control form-control-sm" required>
                                                 </div>
                                             </div>
+                                            <input type="text" id="role_id" name="role_id" value="2" hidden>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="email" class=" form-control-label mt-2 text-hitam"><strong>Email<span class="text-danger">*</span></strong></label>

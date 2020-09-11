@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Agu 2020 pada 12.41
+-- Waktu pembuatan: 08 Sep 2020 pada 11.04
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -1385,42 +1385,6 @@ CREATE TABLE `history` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `history`
---
-
-INSERT INTO `history` (`id`, `type_id`, `user_id`, `entity_id`, `icon`, `class`, `text`, `assets`, `created_at`, `updated_at`) VALUES
-(1, 2, 1, 4, 'plus', 'bg-green', 'trans(\"history.backend.roles.created\") <strong>Maker</strong>', NULL, '2018-07-02 20:37:08', '2018-07-02 20:37:08'),
-(2, 1, 1, 2, 'times', 'bg-yellow', 'trans(\"history.backend.users.deactivated\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Backend User\",2]}', '2018-07-20 09:13:32', '2018-07-20 09:13:32'),
-(3, 1, 1, 2, 'check', 'bg-green', 'trans(\"history.backend.users.reactivated\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Backend User\",2]}', '2018-07-20 09:13:34', '2018-07-20 09:13:34'),
-(4, 1, 1, 4, 'plus', 'bg-green', 'trans(\"history.backend.users.created\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Andreas\",4]}', '2018-07-22 04:56:44', '2018-07-22 04:56:44'),
-(5, 1, 1, 5, 'plus', 'bg-green', 'trans(\"history.backend.users.created\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"tes\",5]}', '2018-07-22 05:02:08', '2018-07-22 05:02:08'),
-(6, 1, 1, 5, 'trash', 'bg-maroon', 'trans(\"history.backend.users.deleted\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"tes\",5]}', '2018-07-22 05:03:42', '2018-07-22 05:03:42'),
-(7, 1, 1, 5, 'trash', 'bg-maroon', 'trans(\"history.backend.users.permanently_deleted\") <strong>{user}</strong>', NULL, '2018-07-22 05:03:45', '2018-07-22 05:03:45'),
-(8, 1, 1, 6, 'plus', 'bg-green', 'trans(\"history.backend.users.created\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Andi\",6]}', '2018-07-22 05:04:15', '2018-07-22 05:04:15'),
-(9, 1, 1, 7, 'plus', 'bg-green', 'trans(\"history.backend.users.created\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Andreas Hadiyono\",7]}', '2018-07-22 05:05:10', '2018-07-22 05:05:10'),
-(10, 1, 1, 8, 'plus', 'bg-green', 'trans(\"history.backend.users.created\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"andreas\",8]}', '2018-07-22 05:07:58', '2018-07-22 05:07:58'),
-(11, 1, 1, 8, 'save', 'bg-aqua', 'trans(\"history.backend.users.updated\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"andreas\",8]}', '2018-07-22 07:18:24', '2018-07-22 07:18:24'),
-(12, 1, 1, 3, 'save', 'bg-aqua', 'trans(\"history.backend.users.updated\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Default User\",3]}', '2018-07-22 07:18:38', '2018-07-22 07:18:38'),
-(13, 1, 1, 8, 'save', 'bg-aqua', 'trans(\"history.backend.users.updated\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"andreas\",8]}', '2018-07-22 07:21:46', '2018-07-22 07:21:46'),
-(14, 1, 1, 3, 'save', 'bg-aqua', 'trans(\"history.backend.users.updated\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Default User\",3]}', '2018-07-22 07:22:29', '2018-07-22 07:22:29'),
-(15, 1, 1, 3, 'save', 'bg-aqua', 'trans(\"history.backend.users.updated\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Default User2\",3]}', '2018-07-22 07:23:27', '2018-07-22 07:23:27'),
-(16, 1, 1, 3, 'save', 'bg-aqua', 'trans(\"history.backend.users.updated\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Default User3\",3]}', '2018-07-22 07:23:50', '2018-07-22 07:23:50'),
-(17, 1, 1, 8, 'save', 'bg-aqua', 'trans(\"history.backend.users.updated\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"andreas\",8]}', '2018-07-22 07:30:28', '2018-07-22 07:30:28'),
-(18, 1, 1, 3, 'save', 'bg-aqua', 'trans(\"history.backend.users.updated\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Default User3\",3]}', '2018-07-22 07:30:41', '2018-07-22 07:30:41'),
-(19, 1, 1, 3, 'lock', 'bg-blue', 'trans(\"history.backend.users.changed_password\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"Default User3\",3]}', '2018-07-22 07:31:50', '2018-07-22 07:31:50'),
-(20, 1, 1, 8, 'lock', 'bg-blue', 'trans(\"history.backend.users.changed_password\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"andreas\",8]}', '2018-07-22 07:32:27', '2018-07-22 07:32:27'),
-(21, 2, 1, 3, 'save', 'bg-aqua', 'trans(\"history.backend.roles.updated\") <strong>User</strong>', NULL, '2018-07-22 07:36:25', '2018-07-22 07:36:25'),
-(22, 2, 1, 2, 'save', 'bg-aqua', 'trans(\"history.backend.roles.updated\") <strong>Marker</strong>', NULL, '2018-07-22 07:37:01', '2018-07-22 07:37:01'),
-(23, 2, 1, 4, 'trash', 'bg-maroon', 'trans(\"history.backend.roles.deleted\") <strong>Maker</strong>', NULL, '2018-07-22 07:37:07', '2018-07-22 07:37:07'),
-(24, 2, 1, 3, 'save', 'bg-aqua', 'trans(\"history.backend.roles.updated\") <strong>Initiator</strong>', NULL, '2018-07-22 07:37:28', '2018-07-22 07:37:28'),
-(25, 2, 1, 5, 'plus', 'bg-green', 'trans(\"history.backend.roles.created\") <strong>Karyawan</strong>', NULL, '2018-07-22 07:37:50', '2018-07-22 07:37:50'),
-(26, 2, 1, 5, 'save', 'bg-aqua', 'trans(\"history.backend.roles.updated\") <strong>Karyawan</strong>', NULL, '2018-07-22 07:38:23', '2018-07-22 07:38:23'),
-(27, 2, 1, 6, 'plus', 'bg-green', 'trans(\"history.backend.roles.created\") <strong>Karyawan</strong>', NULL, '2018-07-22 07:58:48', '2018-07-22 07:58:48'),
-(28, 2, 1, 2, 'save', 'bg-aqua', 'trans(\"history.backend.roles.updated\") <strong>Maker</strong>', NULL, '2018-07-22 08:33:43', '2018-07-22 08:33:43'),
-(29, 1, 1, 8, 'lock', 'bg-blue', 'trans(\"history.backend.users.changed_password\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"andreas\",8]}', '2018-08-05 23:24:00', '2018-08-05 23:24:00'),
-(30, 1, 1, 8, 'lock', 'bg-blue', 'trans(\"history.backend.users.changed_password\") <strong>{user}</strong>', '{\"user_link\":[\"admin.access.user.show\",\"andreas\",8]}', '2018-09-23 09:09:56', '2018-09-23 09:09:56');
 
 -- --------------------------------------------------------
 
@@ -3433,20 +3397,13 @@ CREATE TABLE `peserta` (
   `nip` varchar(255) DEFAULT NULL,
   `nama` varchar(255) DEFAULT NULL,
   `status` int(11) DEFAULT 0,
-  `acc_nip` varchar(255) DEFAULT NULL,
-  `nama_approval` varchar(255) DEFAULT NULL,
-  `jabatan_id` varchar(20) DEFAULT NULL COMMENT 'sama dengandaf_unit_staf.unit_staf_id',
-  `unit_id` varchar(12) DEFAULT NULL COMMENT 'sama dengan daf_unit.unit_id',
   `unit_kerja` text DEFAULT NULL,
   `jabatan` text DEFAULT NULL,
   `tgl_awal` date DEFAULT NULL,
   `tgl_akhir` date DEFAULT NULL,
-  `npwp` varchar(255) DEFAULT NULL,
-  `no_rekening` varchar(255) DEFAULT NULL,
   `kategori_peserta` varchar(255) DEFAULT NULL,
   `create_time` timestamp NULL DEFAULT NULL,
   `update_time` timestamp NULL DEFAULT NULL,
-  `catatan` text DEFAULT NULL,
   `status_hapus` int(11) DEFAULT 0,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -3455,28 +3412,21 @@ CREATE TABLE `peserta` (
 -- Dumping data untuk tabel `peserta`
 --
 
-INSERT INTO `peserta` (`id`, `idSurtu`, `nip`, `nama`, `status`, `acc_nip`, `nama_approval`, `jabatan_id`, `unit_id`, `unit_kerja`, `jabatan`, `tgl_awal`, `tgl_akhir`, `npwp`, `no_rekening`, `kategori_peserta`, `create_time`, `update_time`, `catatan`, `status_hapus`, `deleted_at`) VALUES
-(1, 1, '197401182002121001', 'A. Ardiansyah H.', 0, NULL, NULL, NULL, '101030303000', 'Subbagian Perlengkapan', 'Pengadministrasi Umum', '2018-08-06', '2018-08-06', '-', '-', 'Internal', '2018-08-05 23:25:23', '2018-08-05 23:25:23', NULL, 1, '2018-08-05 23:25:40'),
-(2, 1, '198808022014031003', 'Aan Sulaksono', 0, NULL, NULL, NULL, '101030102000', 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Pengelola Sistem Informasi Manajemen Kepegawaian', '2018-08-06', '2018-08-06', '-', '-', 'Internal', '2018-08-05 23:25:23', '2018-08-05 23:25:23', NULL, 1, '2018-08-05 23:25:40'),
-(3, 1, '203013020120180102', 'Abdul rahman', 0, NULL, NULL, NULL, '100000000000', 'Menteri', 'Auditor Madya', '2018-08-06', '2018-08-06', '-', '-', 'Internal', '2018-08-05 23:26:47', '2018-08-05 23:26:47', NULL, 1, '2018-08-05 23:27:34'),
-(4, 1, '201502019915021097', 'Aang Suhendra', 0, NULL, NULL, NULL, '100000000000', 'Menteri', 'Karyawan', '2018-08-06', '2018-08-06', '-', '-', 'Internal', '2018-08-05 23:26:47', '2018-08-05 23:26:47', NULL, 1, '2018-08-05 23:27:34'),
-(5, 1, '198806042011011002', 'Amrullah Affandi', -1, NULL, NULL, NULL, '101010301000', 'Subbagian Organisasi dan Tata Laksana', 'Analis Organisasi dan Tata Laksana', '2018-08-06', '2018-08-06', '-', '-', 'Internal', '2018-08-05 23:27:34', '2018-08-06 00:01:14', '1231321', 0, NULL),
-(6, 1, '197405242002121001', 'Ponco Imam Prayitno', 1, NULL, NULL, NULL, '101020402000', 'Subbagian Operasional Teknologi Informasi', 'Kepala Subbagian Operasional Teknologi Informasi', '2018-08-06', '2018-08-06', '-', '-', 'Internal', '2018-08-05 23:27:34', '2018-08-06 00:01:14', '23232323232323232', 0, NULL),
-(9, 30, '196301061984032022', 'Muhammad Rizky ', 0, NULL, NULL, NULL, NULL, 'Subbagian Operasional Teknologi Informasi', 'Karyawan', NULL, NULL, NULL, NULL, NULL, '2020-07-16 10:57:27', '2020-07-16 10:57:27', NULL, 0, NULL),
-(10, 30, '196301061984032012', 'Mahmud Yusuf', 0, NULL, NULL, NULL, NULL, 'Subbagian Operasional Teknologi Informasi', 'Karyawan', NULL, NULL, NULL, NULL, NULL, '2020-07-16 11:22:41', '2020-07-16 11:22:41', NULL, 0, NULL),
-(14, 4, '196301061984032001', 'Mahmud Yusuf', 0, NULL, NULL, NULL, NULL, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Auditor Madya', NULL, NULL, NULL, NULL, NULL, '2020-07-17 14:59:25', '2020-07-17 14:59:25', NULL, 0, NULL),
-(18, 4, '196301061984032022', 'Delyana Yusuf', 0, NULL, NULL, NULL, NULL, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Auditor Madya', NULL, NULL, NULL, NULL, NULL, '2020-07-17 15:03:14', '2020-07-17 15:03:14', NULL, 0, NULL),
-(30, 32, '198302162008011003', 'Angga Priyoherjuno, SE', 0, NULL, NULL, NULL, NULL, 'Subbagian Operasional Teknologi Informasi', 'Auditor Muda', NULL, NULL, NULL, NULL, NULL, '2020-07-21 00:11:42', '2020-07-21 00:11:42', NULL, 0, NULL),
-(35, 1, '196301061984032001', 'Mahmud Yusuf', 0, NULL, NULL, NULL, NULL, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Auditor Madya', NULL, NULL, NULL, NULL, NULL, '2020-08-05 21:00:51', '2020-08-05 21:00:51', NULL, 0, NULL),
-(36, 1, '196301061984032022', 'Muhammad Rizky ', 0, NULL, NULL, NULL, NULL, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Auditor Muda', NULL, NULL, NULL, NULL, NULL, '2020-08-05 21:01:07', '2020-08-05 21:01:07', NULL, 0, NULL),
-(37, 1, '196301061984032022', 'Delyana Yusuf', 0, NULL, NULL, NULL, NULL, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Karyawan', NULL, NULL, NULL, NULL, NULL, '2020-08-05 21:01:18', '2020-08-05 21:01:18', NULL, 0, NULL),
-(38, 1, '196301061984032022', 'Muhammad Rizki', 0, NULL, NULL, NULL, NULL, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Karyawan', NULL, NULL, NULL, NULL, NULL, '2020-08-05 21:01:34', '2020-08-05 21:01:34', NULL, 0, NULL),
-(39, 1, '196301061984032012', 'Asita Delyana Devi', 0, NULL, NULL, NULL, NULL, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Karyawan', NULL, NULL, NULL, NULL, NULL, '2020-08-05 21:01:51', '2020-08-05 21:01:51', NULL, 0, NULL),
-(40, 32, '196301061984032001', 'Mahmud Yusuf', 0, NULL, NULL, NULL, NULL, 'Subbagian Operasional Teknologi Informasi', 'Auditor Madya', NULL, NULL, NULL, NULL, NULL, '2020-08-05 21:09:40', '2020-08-05 21:09:40', NULL, 0, NULL),
-(43, 33, '196301061984032001', 'Mahmud Yusuf', 0, NULL, NULL, NULL, NULL, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Auditor Madya', NULL, NULL, NULL, NULL, NULL, '2020-08-07 22:26:08', '2020-08-07 22:26:08', NULL, 0, NULL),
-(46, 32, '197405242002121001', 'Mahmud Yusup', 0, NULL, NULL, NULL, NULL, 'Subbagian Operasional Teknologi Informasi', 'Kepala Subbagian Operasional Teknologi Informasi', NULL, NULL, NULL, NULL, NULL, '2020-08-10 20:43:43', '2020-08-10 20:43:43', NULL, 0, NULL),
-(47, 34, '196301061984032012', 'Muhammad Rizky', 0, NULL, NULL, NULL, NULL, 'Subbagian Operasional Teknologi Informasi', 'Kepala Subbagian Operasional Teknologi Informasi', NULL, NULL, NULL, NULL, NULL, '2020-08-17 22:21:04', '2020-08-17 22:21:04', NULL, 0, NULL),
-(48, 34, '197405242002121001', 'Mahmud Yusup', 0, NULL, NULL, NULL, NULL, 'Subbagian Operasional Teknologi Informasi', 'Kepala Subbagian Operasional Teknologi Informasi', NULL, NULL, NULL, NULL, NULL, '2020-08-17 22:23:47', '2020-08-17 22:23:47', NULL, 0, NULL);
+INSERT INTO `peserta` (`id`, `idSurtu`, `nip`, `nama`, `status`, `unit_kerja`, `jabatan`, `tgl_awal`, `tgl_akhir`, `kategori_peserta`, `create_time`, `update_time`, `status_hapus`, `deleted_at`) VALUES
+(1, 1, '197401182002121001', 'A. Ardiansyah H.', 0, 'Subbagian Perlengkapan', 'Pengadministrasi Umum', '2018-08-06', '2018-08-06', 'Internal', '2018-08-05 23:25:23', '2018-08-05 23:25:23', 1, '2018-08-05 23:25:40'),
+(2, 1, '198808022014031003', 'Aan Sulaksono', 0, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Pengelola Sistem Informasi Manajemen Kepegawaian', '2018-08-06', '2018-08-06', 'Internal', '2018-08-05 23:25:23', '2018-08-05 23:25:23', 1, '2018-08-05 23:25:40'),
+(3, 1, '203013020120180102', 'Abdul rahman', 0, 'Menteri', 'Auditor Madya', '2018-08-06', '2018-08-06', 'Internal', '2018-08-05 23:26:47', '2018-08-05 23:26:47', 1, '2018-08-05 23:27:34'),
+(4, 1, '201502019915021097', 'Aang Suhendra', 0, 'Menteri', 'Karyawan', '2018-08-06', '2018-08-06', 'Internal', '2018-08-05 23:26:47', '2018-08-05 23:26:47', 1, '2018-08-05 23:27:34'),
+(5, 1, '198806042011011002', 'Amrullah Affandi', -1, 'Subbagian Organisasi dan Tata Laksana', 'Analis Organisasi dan Tata Laksana', '2018-08-06', '2018-08-06', 'Internal', '2018-08-05 23:27:34', '2018-08-06 00:01:14', 0, NULL),
+(6, 1, '197405242002121001', 'Ponco Imam Prayitno', 1, 'Subbagian Operasional Teknologi Informasi', 'Kepala Subbagian Operasional Teknologi Informasi', '2018-08-06', '2018-08-06', 'Internal', '2018-08-05 23:27:34', '2018-08-06 00:01:14', 0, NULL),
+(14, 4, '196301061984032001', 'Mahmud Yusuf', 0, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Auditor Madya', NULL, NULL, NULL, '2020-07-17 14:59:25', '2020-07-17 14:59:25', 0, NULL),
+(18, 4, '196301061984032022', 'Delyana Yusuf', 0, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Auditor Madya', NULL, NULL, NULL, '2020-07-17 15:03:14', '2020-07-17 15:03:14', 0, NULL),
+(35, 1, '196301061984032001', 'Mahmud Yusuf', 0, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Auditor Madya', NULL, NULL, NULL, '2020-08-05 21:00:51', '2020-08-05 21:00:51', 0, NULL),
+(36, 1, '196301061984032022', 'Muhammad Rizky ', 0, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Auditor Muda', NULL, NULL, NULL, '2020-08-05 21:01:07', '2020-08-05 21:01:07', 0, NULL),
+(37, 1, '196301061984032022', 'Delyana Yusuf', 0, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Karyawan', NULL, NULL, NULL, '2020-08-05 21:01:18', '2020-08-05 21:01:18', 0, NULL),
+(38, 1, '196301061984032022', 'Muhammad Rizki', 0, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Karyawan', NULL, NULL, NULL, '2020-08-05 21:01:34', '2020-08-05 21:01:34', 0, NULL),
+(39, 1, '196301061984032012', 'Asita Delyana Devi', 0, 'Subbagian Mutasi Sumber Daya Manusia Aparatur', 'Karyawan', NULL, NULL, NULL, '2020-08-05 21:01:51', '2020-08-05 21:01:51', 0, NULL),
+(56, 5, '19740524200211001', 'Mahmud Yusup', 0, 'Subbagian Operasional Teknologi Informasi', 'Kepala Subbagian Operasional Teknologi Informasi', '2020-06-28', '2020-07-31', NULL, '2020-09-01 01:18:46', '2020-09-01 01:18:46', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -3499,7 +3449,7 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name_role`, `all`, `sort`, `created_at`, `updated_at`) VALUES
 (1, 'Administrator', 1, 1, '2018-07-01 05:54:59', '2018-07-01 05:54:59'),
-(2, 'Maker', 0, 2, '2018-07-01 05:54:59', '2018-07-22 08:33:43'),
+(2, 'User', 0, 2, '2018-07-01 05:54:59', '2018-07-22 08:33:43'),
 (3, 'Approval', 0, 3, '2018-07-01 05:54:59', '2018-07-22 07:37:28'),
 (4, 'Atasan', 0, 4, '2018-07-22 07:37:50', '2018-07-22 07:38:23'),
 (6, 'Karyawan', 0, 5, '2018-07-22 07:58:48', '2018-07-22 07:58:48');
@@ -3521,11 +3471,10 @@ CREATE TABLE `role_user` (
 --
 
 INSERT INTO `role_user` (`id`, `user_id`, `role_id`) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
+(3, 3, 2),
 (4, 4, 1),
-(5, 5, 2);
+(5, 5, 2),
+(6, 58, 1);
 
 -- --------------------------------------------------------
 
@@ -3624,18 +3573,11 @@ CREATE TABLE `surat_tugas` (
   `tgl_akhir` date DEFAULT NULL COMMENT 'tgl_akhir kegaitan',
   `created_time` timestamp NULL DEFAULT NULL COMMENT 'tgl pembuatan di ambil dari sistem',
   `n_status` tinyint(1) DEFAULT NULL COMMENT '0=> Blm ditetapkan,1=> sdh ditetapkan, 2=>di tolak',
-  `klasifikasi_surat` varchar(255) DEFAULT NULL COMMENT 'diambil dari able klasifikasi surat (yang dimasukan adalah id)',
-  `keterangan_klasifikasi_surat` varchar(255) DEFAULT NULL COMMENT 'keterangan pada kolom klasifikasi surat',
   `no_surat` text DEFAULT NULL COMMENT 'no surat dimasukan bila sdh di tetapkan',
   `dasar` text NOT NULL COMMENT 'berisi informasi mengenai dasar surat',
   `kepada` text NOT NULL COMMENT 'berisi informasi tujuan surat tugas kepada siapa',
   `untuk` text NOT NULL COMMENT 'berisi informasi mengenai tujuan surat',
   `tembusan` text NOT NULL COMMENT 'berisi informasi terkait tembusan surat',
-  `kode_unit` varchar(255) DEFAULT NULL COMMENT 'kode unit dari daf_unit',
-  `nama_unit` varchar(255) DEFAULT NULL COMMENT 'nama unit dari daf_unit',
-  `maker` int(11) DEFAULT NULL COMMENT 'id user pembuat pertama kali surat',
-  `approval` varchar(255) DEFAULT NULL COMMENT 'id user yang mengesahkan surat',
-  `signer` int(11) DEFAULT NULL COMMENT 'id user yang menandatangani',
   `update_time` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'waktu perubahan data',
   `user_id` int(11) DEFAULT NULL COMMENT 'sama dengan id maker'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -3644,14 +3586,11 @@ CREATE TABLE `surat_tugas` (
 -- Dumping data untuk tabel `surat_tugas`
 --
 
-INSERT INTO `surat_tugas` (`idSurtu`, `judul`, `tgl_awal`, `tgl_akhir`, `created_time`, `n_status`, `klasifikasi_surat`, `keterangan_klasifikasi_surat`, `no_surat`, `dasar`, `kepada`, `untuk`, `tembusan`, `kode_unit`, `nama_unit`, `maker`, `approval`, `signer`, `update_time`, `user_id`) VALUES
-(1, 'Andreas', '2018-08-06', '2018-08-06', '2018-08-05 23:24:29', NULL, 'AA01', 'Sosialisasi', '1', 'Undang-Undang Nomor 5 Tahun 2014 tentang Aparatur Sipil Negara|Peraturan Pemerintah Nomor 11 Tahun 2017 tentang Manajemen Pegawai Negeri Sipil', '', 'Menjadi peserta dalam ……………,di .........., pada tanggal ..s/d.., dengan ketentuan sebagai berikut :', '', '101010000000', 'Biro Manajemen Kinerja, Organisasi, dan Kerja Sama', 8, NULL, NULL, '2018-08-05 23:24:29', 8),
-(2, 'tes', '2019-04-29', '2019-04-29', '2019-04-29 04:25:04', NULL, 'AA02', 'Asistensi/Pendampingan/Konsultasi', '1', 'Undang-Undang Nomor 5 Tahun 2014 tentang Aparatur Sipil Negara|Peraturan Pemerintah Nomor 11 Tahun 2017 tentang Manajemen Pegawai Negeri Sipil', '', 'Menjadi peserta dalam ……………,di .........., pada tanggal ..s/d.., dengan ketentuan sebagai berikut :', '', NULL, NULL, 1, NULL, NULL, '2019-04-29 04:25:04', 1),
-(4, 'Surat Dinas', '2020-01-13', '2020-03-23', '2020-06-28 07:43:43', 1, 'AA04', 'Monitoring dan Evaluasi Akuntabilitas', '0', '&lt;p&gt;1. Sekretaris Utama BKN;&lt;br /&gt;\r\n2. Kepala Biro Keuangan BKN;&lt;br /&gt;\r\n3. Kepala Biro Kepegawaian BKN.&lt;/p&gt;\r\n', 'Nama-nama Pejabat yang tersebut dalam lampiran ini.', '&lt;p&gt;1. Melaksanakan tugas evaluasi LAKIP TA. 2019;&lt;br /&gt;\r\n2. Tugas tersebut dilaksanakan mulai tanggal 1 s.d. 30 April 2020 selama 21 (dua puluh satu) Hari&lt;br /&gt;\r\nKerja (HK);&lt;br /&gt;\r\n3. Setelah selesai melaksanakan tugas tersebut agar segera melaporkan hasilnya kepada Kepala&lt;br /&gt;\r\nBKN atau Pejabat lain yang ditunjuk;&lt;br /&gt;\r\n4. Melaksanakan perintah ini dengan seksama dan penuh rasa tanggung jawab.&lt;/p&gt;\r\n', '&lt;p&gt;Nama-nama Pejabat yang tersebut dalam lampiran ini.&lt;/p&gt;\r\n', NULL, NULL, 9, NULL, NULL, '2020-06-28 07:43:43', 9),
-(31, 'Surat Dinas Pemerintah', '2020-06-02', '2020-08-28', '2020-07-16 11:32:54', 0, NULL, NULL, NULL, '&lt;p&gt;asdasd&lt;/p&gt;\r\n', 'fghfgh', '&lt;p&gt;asdasd&lt;/p&gt;\r\n', '&lt;p&gt;asdasd&lt;/p&gt;\r\n', NULL, NULL, NULL, NULL, NULL, '2020-07-16 11:32:54', NULL),
-(32, 'Surat Tugas BKN', '2020-06-28', '2020-07-31', '2020-07-21 00:10:44', 1, NULL, NULL, NULL, '&lt;p&gt;1. Keputusan Presiden Nomor 103 Tahun 2001 tentang Kedudukan, Tugas, Fungsi, Kewenangan, Susunan Organisasi dan Tata Kerja Lembaga Pemerintah Non Departemen sebagaimana telah diubah, terakhir dengan Peraturan Presiden Nomor 58 Tahun 2013;&lt;br /&gt;\r\n2. Peraturan Menteri Negara Pendayagunaan Aparatur Negara Nomor PER/220/M.PAN/7/2008 tentang Jabatan Fungsional Auditor dan Angka Kreditnya;&lt;br /&gt;\r\n3. Keputusan Kepala Badan Pengawas Keuangan dan Pembangunan Nomor KEP &amp;ndash; 13.00.00- 125/K/1997 tentang Petunjuk Teknis Ketentuan dan Pelaksanaan Jabatan Fungsional Auditor dan Angka Kreditnya dilingkungan Aparat Pengawasan Fungsional Pemerintah;&lt;br /&gt;\r\n4. Peraturan Kepala Badan Kepegawaian Negara Nomor 19 Tahun 2014 tanggal 17 Juli 2014 Sebagaimana Telah diubah dengan Peraturan Kepala Badan Kepegawaian Negara Nomor 31 tahun 2015 tanggal 24 Agustus 2015 tentang Organisasi dan Tata Kerja Badan Kepegawaian Negara;&lt;br /&gt;\r\n5. Program Kerja Pengawasan Tahunan (PKPT) Inspektorat BKN Tahun Anggaran 2020.&lt;/p&gt;\r\n', 'Nama-nama Pejabat yang tersebut dalam lampiran ini.', '&lt;p&gt;1. Melaksanakan tugas evaluasi LAKIP TA. 2019;&lt;br /&gt;\r\n2. Tugas tersebut dilaksanakan mulai tanggal 1 s.d. 30 April 2020 selama 21 (dua puluh satu) Hari Kerja (HK);&lt;br /&gt;\r\n3. Setelah selesai melaksanakan tugas tersebut agar segera melaporkan hasilnya kepada Kepala BKN atau Pejabat lain yang ditunjuk;&lt;br /&gt;\r\n4. Melaksanakan perintah ini dengan seksama dan penuh rasa tanggung jawab.&lt;/p&gt;\r\n', '&lt;p&gt;1. Sekretaris Utama BKN;&lt;br /&gt;\r\n2. Kepala Biro Keuangan BKN;&lt;br /&gt;\r\n3. Kepala Biro Kepegawaian BKN.&lt;/p&gt;\r\n', NULL, NULL, NULL, NULL, NULL, '2020-07-21 00:10:44', NULL),
-(33, 'Surat Dinas Pemerintah', '2020-08-10', '2020-08-12', '2020-08-07 22:11:32', 0, NULL, NULL, NULL, '&lt;p&gt;jhguh&lt;/p&gt;\r\n', 'Nama-nama Pejabat yang tersebut dalam lampiran ini.', '&lt;p&gt;jhjh&lt;/p&gt;\r\n', '&lt;p&gt;vjbjb&lt;/p&gt;\r\n', NULL, NULL, NULL, NULL, NULL, '2020-08-07 22:11:32', NULL),
-(34, 'Surat Tugas Inspektur BKN', '2020-06-18', '2020-08-18', '2020-08-17 22:17:02', 1, NULL, NULL, '78/ST/01000/I/2020', '&lt;p&gt;1. Undang-Undang Nomor 17 Tahun 2003 tentang Keuangan Negara&lt;br /&gt;\r\n2. Undang-Undang Nomor 1 Tahun 2004 tentang Perbedaharaan Negara&lt;br /&gt;\r\n3. Undang-Undang Nomor 5 Tahun 2014 tenang Aparatur Sipil Negara&lt;br /&gt;\r\n4. Peraturan Presiden Nomor 58 Tahun 2013 tentang Badan Kepagaiwaian Negara&lt;/p&gt;\r\n', '&lt;p&gt;1. Dra. Purwani Siswantari, MM. NIP 19630106 198403 2 001 Auditor Madya&lt;br /&gt;\r\n2. Suherman, SE. NIP 19630816 198412 1 001 Auditor Madya&lt;br /&gt;\r\n3. Margo Pratomo, A.Md. NIP 19870313 201012 1 001 Auditor Pelaksana Lanjutan&lt;br /&gt;\r\n4. Mar&amp;rsquo;an Hoven, S.Kom, SH. NIP 19890331 201012 1 001 Auditor Pertama&lt;/p&gt;\r\n', '&lt;p&gt;1. Keputusan Presiden Nomor 103 Tahun 2001 tentang Kedudukan, Tugas, Fungsi, Kewenangan, Susunan Organisasi dan Tata Kerja Lembaga Pemerintah Non Departemen sebagaimana telah diubah, terakhir dengan Peraturan Presiden Nomor 58 Tahun 2013;&lt;br /&gt;\r\n2. Peraturan Menteri Negara Pendayagunaan Aparatur Negara Nomor PER/220/M.PAN/7/2008 tentang Jabatan Fungsional Auditor dan Angka Kreditnya;&lt;br /&gt;\r\n3. Keputusan Kepala Badan Pengawas Keuangan dan Pembangunan Nomor KEP &amp;ndash; 13.00.00- 125/K/1997 tentang Petunjuk Teknis Ketentuan dan Pelaksanaan Jabatan Fungsional Auditor dan Angka Kreditnya dilingkungan Aparat Pengawasan Fungsional Pemerintah;&lt;br /&gt;\r\n4. Peraturan Kepala Badan Kepegawaian Negara Nomor 19 Tahun 2014 tanggal 17 Juli 2014 Sebagaimana Telah diubah dengan Peraturan Kepala Badan Kepegawaian Negara Nomor 31 tahun 2015 tanggal 24 Agustus 2015 tentang Organisasi dan Tata Kerja BKN;&lt;br /&gt;\r\n5. Peraturan Pemerintah Nomor 60 Tahun 2008 tentang Sistem Pengendaian Intern Pemerintah;&lt;br /&gt;\r\n6. Program Kerja Pengawasan Tahunan (PKPT) Inspektorat BKN Tahun Anggaran 2019.&lt;/p&gt;\r\n', '&lt;p&gt;1.&amp;nbsp; Dra. Purwani Siswantari, MM 196301061984032001 Auditor Madya&lt;/p&gt;\r\n\r\n&lt;p&gt;2. Angga Priyoherjuno, SE 198302162008011003 Auditor Muda&lt;/p&gt;\r\n', NULL, NULL, 5, NULL, NULL, '2020-08-17 22:17:02', 5);
+INSERT INTO `surat_tugas` (`idSurtu`, `judul`, `tgl_awal`, `tgl_akhir`, `created_time`, `n_status`, `no_surat`, `dasar`, `kepada`, `untuk`, `tembusan`, `update_time`, `user_id`) VALUES
+(1, 'Surat Tugas Perjalanan Dinas', '2020-09-08', '2020-09-22', '2018-08-05 23:24:29', 0, '', '&lt;p&gt;Undang-Undang Nomor 5 Tahun 2014 tentang Aparatur Sipil Negara|Peraturan Pemerintah Nomor 11 Tahun 2017 tentang Manajemen Pegawai Negeri Sipil&lt;/p&gt;\r\n', '&lt;p&gt;Pejabat/pegawai yang nama-namanya tersebut dalam Lampiran Surat Tugas ini&lt;/p&gt;\r\n', '&lt;p&gt;1. Melaksanakan Perjalanan Dinas Dalam Rangka Fasilitasi CAT Pelaksanaan Seleksi Kompetensi Dasar (SKD) Seleksi Calon Pegawai Negeri Sipil (CPNS) Formasi Tahun 2020 Kementeritan Pertahanan RI, pada tangggal dan lokasi sebagaimana dalam Lampiran Surat Tugas ini.&lt;br /&gt;\r\n2. Setelah selesai melaksanakan tugas, supaya melaporkan hasilnya kepada Kepala Badan Kepegawaian Negara atau pejabat lain yang ditunjuk.&lt;br /&gt;\r\n3. Melaksanakan tugas ini dengan seksama dan penuh rasa tanggung jawab.&lt;br /&gt;\r\n4. Membebankan segala biaya yang diperlukan untuk pekasanaan kegiatan tersebut di atas, pada DIPA Badan Kepegawaian Negara Tahun Anggaran 2020 dengan MAK Nomor : 088.01.06.3655.044.001.052.B.54113.&lt;/p&gt;\r\n', '&lt;p&gt;1. Kepala Biro Kepegawaian&lt;br /&gt;\r\n2. Kepala Biro Keuangan&lt;br /&gt;\r\n3. PPK Pusat Pengembangan Sistem Rekrutmen ASN&lt;/p&gt;\r\n', '2018-08-05 23:24:29', 8),
+(2, 'tes', '2019-04-29', '2019-04-29', '2019-04-29 04:25:04', 2, '', '&lt;p&gt;Undang-Undang Nomor 5 Tahun 2014 tentang Aparatur Sipil Negara|Peraturan Pemerintah Nomor 11 Tahun 2017 tentang Manajemen Pegawai Negeri Sipil&lt;/p&gt;\r\n', '', '&lt;p&gt;Menjadi peserta dalam &amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;,di .........., pada tanggal ..s/d.., dengan ketentuan sebagai berikut :&lt;/p&gt;\r\n', '', '2019-04-29 04:25:04', 1),
+(4, 'Surat Dinas', '2019-12-01', '2019-12-31', '2020-06-28 07:43:43', 1, '15/ST/01210/I/2020', '&lt;p&gt;1. Keputusan Presiden Nomor 103 Tahun 2001 tentang Kedudukan, Tugas, Fungsi, Kewenangan, Susunan Organisasi dan Tata Kerja Lembaga Pemerintah Non Departemen sebagaimana telah diubah, terakhir dengan Peraturan Presiden Nomor 58 Tahun 2013;&lt;/p&gt;\r\n\r\n&lt;p&gt;2. Peraturan Menteri Negara Pendayagunaan Aparatur Negara Nomor PER/220/M.PAN/7/2008 tentang Jabatan Fungsional Auditor dan Angka Kreditnya;&lt;/p&gt;\r\n\r\n&lt;p&gt;3. Keputusan Kepala Badan Pengawas Keuangan dan Pembangunan Nomor KEP &amp;ndash; 13.00.00- 125/K/1997 tentang Petunjuk Teknis Ketentuan dan Pelaksanaan Jabatan Fungsional Auditor dan Angka Kreditnya dilingkungan Aparat Pengawasan Fungsional Pemerintah;&lt;/p&gt;\r\n\r\n&lt;p&gt;4. Peraturan Kepala Badan Kepegawaian Negara Nomor 19 Tahun 2014 tanggal 17 Juli 2014 Sebagaimana Telah diubah dengan Peraturan Kepala Badan Kepegawaian Negara Nomor 31 tahun 2015 tanggal 24 Agustus 2015 tentang Organisasi dan Tata Kerja BKN;&lt;/p&gt;\r\n\r\n&lt;p&gt;5. Peraturan Pemerintah Nomor 60 Tahun 2008 tentang Sistem Pengendaian Intern Pemerintah;&lt;/p&gt;\r\n\r\n&lt;p&gt;6. Program Kerja Pengawasan Tahunan (PKPT) Inspektorat BKN Tahun Anggaran 2019&lt;/p&gt;\r\n', '&lt;p&gt;1. Dra. Purwani Siswantari, MM. NIP 19630106 198403 2 001 Auditor Madya&lt;/p&gt;\r\n\r\n&lt;p&gt;2. Suherman, SE. NIP 19630816 198412 1 001 Auditor Madya&lt;/p&gt;\r\n\r\n&lt;p&gt;3. Margo Pratomo, A.Md. NIP 19870313 201012 1 001 Auditor Pelaksana Lanjutan&lt;/p&gt;\r\n\r\n&lt;p&gt;4. Mar&amp;rsquo;an Hoven, S.Kom, SH. NIP 19890331 201012 1 001 Auditor Pertama&lt;/p&gt;\r\n', '&lt;p&gt;1. Melaksanakan tugas tindaklanjut temuan BPK, tugas tersebut dilaksanakan mulai tanggal 01&amp;nbsp;Desember 2019 sampai dengan 31 Desember 2019 selama 30 (tiga&amp;nbsp;puluh) hari kerja (HK);&lt;br /&gt;\r\n2. Setelah selesai melaksanakan tugas tersebut agar segera melaporkan hasilnya kepada Inspektur BKN atau Pejabat lain yang ditunjuk;&lt;br /&gt;\r\n3. Melaksanakan perintah ini dengan seksama dan penuh rasa tanggung jawab.&lt;/p&gt;\r\n', '', '2020-06-28 07:43:43', 9),
+(5, 'Surat Tugas BKN', '2020-06-28', '2020-07-31', '2020-07-21 00:10:44', 1, '78/ST/01000/I/2020', '&lt;p&gt;1. Keputusan Presiden Nomor 103 Tahun 2001 tentang Kedudukan, Tugas, Fungsi, Kewenangan, Susunan Organisasi dan Tata Kerja Lembaga Pemerintah Non Departemen sebagaimana telah diubah, terakhir dengan Peraturan Presiden Nomor 58 Tahun 2013;&lt;br /&gt;\r\n2. Peraturan Menteri Negara Pendayagunaan Aparatur Negara Nomor PER/220/M.PAN/7/2008 tentang Jabatan Fungsional Auditor dan Angka Kreditnya;&lt;br /&gt;\r\n3. Keputusan Kepala Badan Pengawas Keuangan dan Pembangunan Nomor KEP &amp;ndash; 13.00.00- 125/K/1997 tentang Petunjuk Teknis Ketentuan dan Pelaksanaan Jabatan Fungsional Auditor dan Angka Kreditnya dilingkungan Aparat Pengawasan Fungsional Pemerintah;&lt;br /&gt;\r\n4. Peraturan Kepala Badan Kepegawaian Negara Nomor 19 Tahun 2014 tanggal 17 Juli 2014 Sebagaimana Telah diubah dengan Peraturan Kepala Badan Kepegawaian Negara Nomor 31 tahun 2015 tanggal 24 Agustus 2015 tentang Organisasi dan Tata Kerja Badan Kepegawaian Negara;&lt;br /&gt;\r\n5. Program Kerja Pengawasan Tahunan (PKPT) Inspektorat BKN Tahun Anggaran 2020.&lt;/p&gt;\r\n', '&lt;p&gt;Nama-nama Pejabat yang tersebut dalam lampiran ini.&lt;/p&gt;\r\n', '&lt;p&gt;1. Melaksanakan tugas evaluasi LAKIP TA. 2019;&lt;br /&gt;\r\n2. Tugas tersebut dilaksanakan mulai tanggal 1 s.d. 30 April 2020 selama 21 (dua puluh satu) Hari Kerja (HK);&lt;br /&gt;\r\n3. Setelah selesai melaksanakan tugas tersebut agar segera melaporkan hasilnya kepada Kepala BKN atau Pejabat lain yang ditunjuk;&lt;br /&gt;\r\n4. Melaksanakan perintah ini dengan seksama dan penuh rasa tanggung jawab.&lt;/p&gt;\r\n', '&lt;p&gt;1. Sekretaris Utama BKN;&lt;br /&gt;\r\n2. Kepala Biro Keuangan BKN;&lt;br /&gt;\r\n3. Kepala Biro Kepegawaian BKN.&lt;/p&gt;\r\n', '2020-07-21 00:10:44', 5);
 
 -- --------------------------------------------------------
 
@@ -3676,7 +3615,6 @@ CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `unit_kerja` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `unit_kerja_dibawahnya` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nip` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jabatan` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -3694,12 +3632,12 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `unit_kerja`, `unit_kerja_dibawahnya`, `nip`, `jabatan`, `email`, `password`, `status`, `confirmation_code`, `confirmed`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Admin Istrator', '', NULL, '', '', 'admin@admin.com', '$2y$10$aEej.BACBiCb/c.DknZHnuY1.4QJFmLeFMbtmEbTGLYplRCFNNHta', 1, '79d669947b462db3e92f9dd96b067efd', 1, 'Ermk53FzbC8bwUXlsmpkBAdceORxOqAMjP6ylUzjqQOqlzLjcTF4YbwjQlkO', '2018-07-01 05:54:59', '2018-07-01 05:54:59', NULL),
-(2, 'Backend User', '', NULL, '', '', 'executive@executive.com', '$2y$10$Qe3XjW30QXbPSGcGuRCrEe5oT6xw.5AE6an31D5J5pzXoO23iJVxW', 1, '052966267c79b69d7cc3c5971bdba025', 1, 'O8TKXgsJlssSqp8ZeWet2kSC5lU1njVeWGGHFF3plV3dUnyjspE5zO0YwdEt', '2018-07-01 05:54:59', '2018-07-20 09:13:34', NULL),
-(3, 'Default User3', '100610001000', NULL, '', '', 'user@user.com', '$2y$10$EN125001fjZI4slRwS1JqOuhviL6185UBZBhvtTXHM8W6/qLmDqhy', 1, 'cbf3db5486ba95eaded9f33781916471', 1, NULL, '2018-07-01 05:54:59', '2018-07-22 07:31:50', NULL),
-(4, 'Mahmud Yusup', 'Subbagian Operasional Teknologi Informasi', NULL, '197405242002121001', 'Kepala Subbagian Operasional Teknologi Informasi', 'mahmudyusuf94@gmail.com', '$2y$10$2I2MXdmHYwX4YYZhuJUqYeBBkcn.WDMTchtzacQRFjM0g3U201EU.', 1, NULL, 0, NULL, '2020-04-26 23:50:43', '2020-04-26 23:50:43', NULL),
-(5, 'Muhammad Rizky', 'Subbagian Operasional Teknologi Informasi', NULL, '196301061984032012', 'Kepala Subbagian Operasional Teknologi Informasi', 'rizkyaditya@gmail.com', '$2y$10$8YWgXUXAvXw3WBOkaUjqD.cFdoDT/UZCpTQhbB/8JL/g9nljdVUTG', 1, NULL, 0, NULL, '2020-08-17 19:45:30', '2020-08-17 19:45:30', NULL);
+INSERT INTO `users` (`id`, `name`, `unit_kerja`, `nip`, `jabatan`, `email`, `password`, `status`, `confirmation_code`, `confirmed`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(3, 'Maulana Aziz', '100610001000', '15476156734852712', 'Auditor Pelaksana Lanjutan', 'maulanaaziz@gmail.com', '$2y$10$EN125001fjZI4slRwS1JqOuhviL6185UBZBhvtTXHM8W6/qLmDqhy', 1, 'cbf3db5486ba95eaded9f33781916471', 1, NULL, '2018-07-01 05:54:59', '2018-07-22 07:31:50', NULL),
+(4, 'Mahmud Yusup', 'Subbagian Operasional Teknologi Informasi', '19740524200211001', 'Kepala Subbagian Operasional Teknologi Informasi', 'mahmudyusuf94@gmail.com', '$2y$10$2I2MXdmHYwX4YYZhuJUqYeBBkcn.WDMTchtzacQRFjM0g3U201EU.', 1, NULL, 0, NULL, '2020-04-26 23:50:43', '2020-04-26 23:50:43', NULL),
+(5, 'Muhammad Rizky', 'Subbagian Teknis', '19630106198403202', 'Pengendali Teknis', 'rizkyaditya@gmail.com', '$2y$10$8YWgXUXAvXw3WBOkaUjqD.cFdoDT/UZCpTQhbB/8JL/g9nljdVUTG', 1, NULL, 0, NULL, '2020-08-17 19:45:30', '2020-09-06 10:52:31', NULL),
+(58, 'Asita Delyana', 'Subbagian Mutasi Sumber Daya Manusia Aparatur', '15476106198852712', 'Auditor Madya', 'asitadelyana@gmail.com', '$2y$10$0hq9sXO8bVUsP8.Qd3Yrk.qlS.ITzJ4AzNkrLlvGBgVjHVUPha17y', 1, NULL, 0, NULL, '2020-08-31 18:30:03', '2020-08-31 18:30:03', NULL),
+(60, 'Dra. Purwani Siswantari, MM', 'Subbagian Mutasi Sumber Daya Manusia Aparatur', '196301061984032012', 'Auditor Muda', 'purwanisiswantari@gmail.com', '$2y$10$nVnRfaqRtxKQaatcVZgvbe.N9tHSgh0gR8wpZbRltzcD1l.iN2pyG', 1, NULL, 0, NULL, '2020-08-31 19:39:31', '2020-08-31 19:39:31', NULL);
 
 --
 -- Indexes for dumped tables
@@ -3904,7 +3842,7 @@ ALTER TABLE `permission_role`
 -- AUTO_INCREMENT untuk tabel `peserta`
 --
 ALTER TABLE `peserta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT untuk tabel `roles`
@@ -3916,7 +3854,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT untuk tabel `role_user`
 --
 ALTER TABLE `role_user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `rumpun_klasifikasi_surat`
@@ -3934,7 +3872,7 @@ ALTER TABLE `social_logins`
 -- AUTO_INCREMENT untuk tabel `surat_tugas`
 --
 ALTER TABLE `surat_tugas`
-  MODIFY `idSurtu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `idSurtu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT untuk tabel `template_surtu`
@@ -3946,7 +3884,7 @@ ALTER TABLE `template_surtu`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

@@ -61,6 +61,24 @@
                                         <td><input type="text" class="form-control form-control-sm" name="name" value="<?= $data['name']; ?>"></td></tr>
                                         <tr><td class="text-hitam"><strong>Email</strong></td>
                                         <td><input type="text" class="form-control form-control-sm" name="email" value="<?= $data['email']; ?>"></td></tr>
+                                        
+                                        <tr><td class="text-hitam"><strong>Role</strong></td>
+                                        <td><select name="role_id" class="form-control-sm">
+                                                            <option <?php if ($role->role_id == 1) echo'selected';?> value="1">Admin</option>
+                                                            <option <?php if ($role->role_id == 2) echo'selected';?> value="2">User</option>
+                                            </select>
+                                        </tr>
+                                        
+                                        <!-- <?php if($role->role_id == 2){ ?>
+                                        <tr><td class="text-hitam"><strong>Role</strong></td>
+                                        <td><input type="text" class="form-control form-control-sm" name="role_id" value="<?php if($role->role_id  == 1 ){
+                                            echo('Admin');
+                                        }elseif($role->role_id  == 2){
+                                            echo('User');
+                                        }
+                                        ?>" disabled>
+                                        </tr>
+                                        <?php } ?> -->
                                         <tr><td class="text-hitam"><strong>Jabatan</strong></td>
                                         <td><input type="text" class="form-control form-control-sm" name="jabatan" value="<?= $data['jabatan']; ?>"></td></tr>
                                         <tr><td class="text-hitam"><strong>Unit Kerja</strong></td>

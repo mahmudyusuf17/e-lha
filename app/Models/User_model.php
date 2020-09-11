@@ -57,6 +57,13 @@ class User_model extends Model
         // ]);
         // $this->db->table('roles')->insert($data_role);
     }
+    function input_role($data, $id_user)
+    {
+        return $this->db->table('role_user')->insert([
+            'user_id' => $id_user,
+            'role_id' => $data['role_id'],
+        ]);
+    }
 
     function delete_user($id)
     {

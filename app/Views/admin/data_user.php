@@ -34,6 +34,13 @@
                                         <td><?= $data['name']; ?></td></tr>
                                         <tr><td class="text-hitam"><strong>Email</strong></td>
                                         <td><?= $data['email']; ?></td></tr>
+                                        <tr><td class="text-hitam"><strong>Role</strong></td>
+                                        <td><?php if($role->role_id  == 1 ){
+                                            echo('Admin');
+                                        }elseif($role->role_id  == 2){
+                                            echo('User');
+                                        }
+                                        ?></td></tr>
                                         <tr><td class="text-hitam"><strong>Jabatan</strong></td>
                                         <td><?= $data['jabatan']; ?></td></tr>
                                         <tr><td class="text-hitam"><strong>Unit Kerja</strong></td>

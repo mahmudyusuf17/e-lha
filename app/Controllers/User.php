@@ -43,6 +43,7 @@ class User extends Controller
         $data = [
             'nip'               => htmlspecialchars($this->request->getpost('nip')),
             'nama'              => htmlspecialchars($this->request->getpost('nama')),
+            'role_id'           => $this->request->getpost('role_id'),
             'email'             => htmlspecialchars($this->request->getpost('email')),
             'password'          => htmlspecialchars($this->request->getpost('password')),
             'confirm_pass'   => htmlspecialchars($this->request->getpost('password2')),
@@ -56,7 +57,9 @@ class User extends Controller
         }else{
             $user = new User_model();
             $input = $user->tambah_user($data);
-            if ($input){
+            $id_user = $user->insertID();
+            $input_role = $user->input_role($data, $id_user);
+            if ($input_role){
                 session()->setFlashdata('berhasil_regis', $this->request->getpost());
                 return redirect()->to(base_url('auth'));
                 
@@ -65,23 +68,25 @@ class User extends Controller
     }
 
 
-    public function data_user($id)
+    public function data_user($user)
     {
-        $user = new Data_model();
+        $user_model = new Data_model();
         $data = [
             'title' => 'Data User',
-            'data' => $user->find($id),
+            'data' => $user_model->find($user),
+            'role' => $user_model->data_user($user)->getRow(),
             'isi'   => 'admin/data_user',
         ];
         echo view('layout/wrapper', $data);
     }
 
-    public function edit_user($id)
+    public function edit_user($user)
     {
-        $user = new Data_model();
+        $user_model = new Data_model();
         $data = [
             'title' => 'Data User',
-            'data' => $user->find($id),
+            'data' => $user_model->find($user),
+            'role' => $user_model->data_user($user)->getRow(),
             'isi'   => 'admin/edit_user',
         ];
         echo view('layout/wrapper', $data);
