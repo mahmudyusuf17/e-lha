@@ -110,13 +110,16 @@ class Validation
 	
 	// validation input team
 	public $team = [
-        'nip' => 'required|min_length[3]',
+		'nip' => 'required|min_length[3]',
+		'nama' => 'required',
 	];
 	public $team_errors = [
 		'nip' => [
 			'required' => 'NIP Wajib Diisi dan Tidak Boleh Kosong',
 			'min_length' => 'NIP Terlalu Pendek',
-			
+		],
+		'nama' => [
+			'required' => 'Nama Wajib Diisi dan Tidak Boleh Kosong',
 		],
 	];
 }

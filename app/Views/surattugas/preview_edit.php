@@ -22,10 +22,20 @@
                                 <button class="btn btn-success btn-sm float-right"><i class="fa fa-print"> Print</i></button>
                                 <form method="post">
                                 <h5>Preview Surat Tugas</h5><hr>
+                                <?php if ($surat->n_status == 1) { ?>
                                 <div class="col-md-12">
                                     <iframe src="<?= base_url()?>/surattugas/pdf/<?=$surat->idSurtu?>" type="app/pdf" frameborder="2" width="100%" height="600px"></iframe>
                                 </div>
-                                <div class="mt-5" id="buttonpage3"><hr>
+                                <?php } ?>
+                                <?php if ($surat->n_status != 1) { ?>
+                                <div class="col-md-12 my-5">
+                                    <div class="text-center">
+                                    <p class="h4">Surat Tugas Belum di Setujui</p>
+                                    <p class="h6">Silakan cek kembali jika telah disetujui</p>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                <div class="mt-5"><hr>
                                 <div class="float-right">
                                 <a href="<?= base_url()?>/surattugas" class="btn btn-warning" type="button">Finish</a>
                                 <button class="btn btn-success" type="button" disabled>Next</button>

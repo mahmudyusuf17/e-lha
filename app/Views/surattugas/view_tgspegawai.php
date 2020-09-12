@@ -43,7 +43,7 @@
                                         }
                                         ?></td>
                                         <?php if ($data->n_status == 1) { ?>
-                                        <td class="text-center"><a href="<?= base_url()?>/surattugas/pdf/<?= $data->idSurtu ?>" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>
+                                        <td class="text-center"><a href="<?= base_url()?>/surattugas/view_cetak_surtu/<?= $data->idSurtu ?>" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>
                                         </td>
                                         <?php } ?>
                                         <?php if ($data->n_status != 1) { ?>

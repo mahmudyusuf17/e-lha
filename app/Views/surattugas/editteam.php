@@ -159,8 +159,8 @@
                                         <div class="col-12">
                                                 <input type="text" name="nip" class="form-control form-control-sm" value="<?= session()->get('nip') ?>" hidden>
                                                     <label for="nama" class="form-control-label mt-2 text-hitam"><strong>NAMA<span class="text-danger">*</span></strong></label>
-                                                    <select name="nama" id="SelectLm" class="form-control">
-                                                            <option value="0"></option>
+                                                    <select name="nama" id="SelectLm" class="form-control" required>
+                                                            <option></option>
                                                             <option value="<?= session()->get('nama') ?>"><?= session()->get('nama') ?></option>
                                                     </select>
                                                     <input type="text" name="unit_kerja" class="form-control form-control-sm" value="<?= session()->get('unit_kerja') ?>" hidden>

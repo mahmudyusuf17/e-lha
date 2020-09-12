@@ -400,6 +400,22 @@ class SuratTugas extends BaseController
         echo view('layout/wrapper', $data);
     }
 
+    public function view_cetak_surtu($idSurtu)
+    {
+        if (session()->get('email')=='') {
+            return redirect()->to(base_url('auth'));
+        }
+        helper('tanggal');
+        $model = new Surattugas_model();
+        $data = [
+            'title'         => 'View Cetak Surat Tugas',
+            'surat'         => $model->ambil_data($idSurtu)->getRow(),
+            'team'          => $model->data_team($idSurtu)->getResult(),
+            'isi'           => 'surattugas/view_cetak_surtu'
+        ];
+        echo view('layout/wrapper', $data);
+    }
+
     public function hapus_data($idSurtu)
     {
         $surat = new Surattugas_model();

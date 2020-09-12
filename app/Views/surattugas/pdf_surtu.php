@@ -79,10 +79,10 @@
                                         <tr class="text-center">
                                         <th scope="col" width="20px">No</th>
                                         <th scope="col">NAMA / NIP</th>
-                                        <th scope="col" width="20px">GOL RUANG</th>
+                                        <!-- <th scope="col" width="20px">GOL RUANG</th> -->
                                         <th scope="col">JABATAN</th>
                                         <th scope="col">JABATAN DALAM TIM</th>
-                                        <th scope="col">OBYEK EVALUASI</th>
+                                        <!-- <th scope="col">OBYEK EVALUASI</th> -->
                                         <th scope="col">TANGGAL</th>
                                         <th scope="col">JANGKA WAKTU</th>
                                         </tr>
@@ -94,10 +94,10 @@
                                     <tr>
                                     <td class="text-center"><?= $no++ ?></td>
                                     <td><?= $data->nama?><br><?= $data->nip?></td>
-                                    <td></td>
+                                    <!-- <td></td> -->
                                     <td><?= $data->jabatan?></td>
                                     <td><?= $data->unit_kerja?></td>
-                                    <td></td>
+                                    <!-- <td></td> -->
                                     <td><?= tgl_bulan($surat->tgl_awal) . ' -' .tgl_indo($surat->tgl_akhir) ?></td>
                                     <td><?php 	
                                     $tgl1 = new DateTime($surat->tgl_awal); 	

@@ -78,7 +78,8 @@
                                         <div class="col-md-8">
                                         <h4>Tabel Team</h4><hr></div>
                                     <div class="col-md-4">
-                                    <button type="button" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#tambah_team" aria-labelledby="scrollmodalLabel">Tambah Peserta</button></td></div>
+                                    <button type="button" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#tambah_team" aria-labelledby="scrollmodalLabel">Tambah Peserta</button>
+                                    </div>
                                     </div>
                                     <div class="row form-group">
                                     <div class="table-responsive m-b-40 mt-3">
@@ -147,8 +148,8 @@
                                         <?= csrf_field() ?>
                                                 <input type="text" name="nip" class="form-control form-control-sm" value="<?= session()->get('nip') ?>" hidden>
                                                     <label for="nama" class="form-control-label mt-2 text-hitam"><strong>NAMA<span class="text-danger">*</span></strong></label>
-                                                    <select name="nama" id="SelectLm" class="form-control">
-                                                            <option value="0"></option>
+                                                    <select name="nama" id="SelectLm" class="form-control" required>
+                                                            <option></option>
                                                             <option value="<?= session()->get('nama') ?>"><?= session()->get('nama') ?></option>
                                                     </select>
                                                     <input type="text" name="unit_kerja" class="form-control form-control-sm" value="<?= session()->get('unit_kerja') ?>" hidden>
