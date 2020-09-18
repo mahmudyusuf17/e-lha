@@ -91,7 +91,9 @@
                                             <th>Nama</th>
                                             <th>Unit</th>
                                             <th>Jabatan</th>
+                                            <?php if($role->role_id==1) {?>
                                             <th>Aksi</th>
+                                            <?php } ?>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -104,7 +106,9 @@
                                                 <td><?= $data->nama?></td>
                                                 <td><?= $data->unit_kerja?></td>
                                                 <td><?= $data->jabatan?></td>
+                                                <?php if($role->role_id==1) {?>
                                                 <td><a href="<?= base_url()?>/surattugas/edit_member/<?= $data->id ?>" class="btn btn-sm btn-success my-2"><i class="fa fa-edit"></i></a><button class="btn btn-sm btn-danger" type="button" onclick="hapus_team('<?= $data->id ?>')"><i class="fa fa-trash"></i></button></td>
+                                                <?php } ?>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
@@ -143,9 +147,10 @@
 						</div>
                         <div class="col-lg-12">
                                     <div class="card-body">
-                                        <form action="<?php echo base_url('surattugas/tambah_team/')?>/<?= $surat->idSurtu?>" method="post" class="form-horizontal">
+                                        <form action="<?php echo base_url('surattugas/add_peserta/')?>/<?= $surat->idSurtu?>" method="post" class="form-horizontal">
                                         <div class="col-12">
                                         <?= csrf_field() ?>
+                                                <?php if($role->role_id==2){ ?>
                                                 <input type="text" name="nip" class="form-control form-control-sm" value="<?= session()->get('nip') ?>" hidden>
                                                     <label for="nama" class="form-control-label mt-2 text-hitam"><strong>NAMA<span class="text-danger">*</span></strong></label>
                                                     <select name="nama" id="SelectLm" class="form-control" required>
@@ -157,6 +162,22 @@
                                                     <input type="text" name="tgl_awal" class="form-control form-control-sm" value="<?= $surat->tgl_awal ?>" hidden>
                                                     <input type="text" name="tgl_akhir" class="form-control form-control-sm" value="<?= $surat->tgl_akhir ?>" hidden>
                                                 </div>
+                                                <?php } ?>
+                                                <?php if($role->role_id==1){ ?>
+                                                    <label for="nama" class="form-control-label mt-2 text-hitam"><strong>NAMA<span class="text-danger">*</span></strong></label>
+                                                    <select name="nip" id="select" class="form-control" required>
+                                                    <option>--- pilih nama ---</option>
+                                                    <?php 
+                                                    foreach($user as $users => $value) :
+                                                    ?>
+                                                            <option value="<?= $value['nip']; ?>"><?= $value['name']; ?> ( <?= $value['nip']; ?> )</option>
+                                                    <?php endforeach; ?>
+                                                    </select>
+                                                    
+                                                    <input type="text" name="tgl_awal" class="form-control form-control-sm" value="<?= $surat->tgl_awal ?>" hidden>
+                                                    <input type="text" name="tgl_akhir" class="form-control form-control-sm" value="<?= $surat->tgl_akhir ?>" hidden>
+                                                </div>
+                                                <?php } ?>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
@@ -175,3 +196,22 @@
                 </div>
             </div>
                     <!-- end of form -->
+
+                    <!-- <script>
+                        $(document).ready(function(){
+                            $('select').change(function(){
+                                var id = $(this).val();
+                                $.ajax({
+                                    type: "POST",
+                                    url: "<?= base_url('surattugas/add_peserta')?>",
+                                    data:{
+                                        id:id
+                                    },
+                                    dataType: "JSON"
+                                    success: function(response){
+                                        $('')
+                                    }
+                                });
+                            });
+                        }); 
+                    </script> -->

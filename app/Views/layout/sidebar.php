@@ -19,7 +19,7 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
-                            <a class="js-arrow" href="<?php echo base_url('administrator/dashboard') ?>">
+                            <a class="js-arrow" href="<?php echo base_url() ?>">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <!-- <hr class="sidebar-divider">
@@ -77,7 +77,7 @@
                             <a href="<?php echo base_url('lhr') ?>">
                                 <i class="fa fa-rotate-right"></i>Review Audit</a>
                         </li> -->
-                        <li class="has-sub">
+                        <!-- <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-cog"></i>Pengaturan
                                 <span class="arrow ml-5">
@@ -91,7 +91,8 @@
                                     <a href="forget-pass.html"><i class="fa fa-user-circle"></i>Forget Password</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
+                        <hr class="sidebar-divider">
                         <li>
                             <a href="<?= base_url('auth/logout') ?>">
                                 <i class="fa fa-sign-out-alt"></i>Log Out</a>

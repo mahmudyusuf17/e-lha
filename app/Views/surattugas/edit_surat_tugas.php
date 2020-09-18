@@ -35,7 +35,7 @@
                                         <div class="container">
                                             <ul class="progressbar">
                                                 <li class="active">Update Data Surat Tugas</li>
-                                                <li><a href="<?= base_url()?>/surattugas/editteam/<?= $surat->idSurtu?>"><span class="text-hitam">Update Team</span></a></li>
+                                                <li><a href="<?= base_url()?>/surattugas/edit_team/<?= $surat->idSurtu?>"><span class="text-hitam">Update Team</span></a></li>
                                                 <li><a href="<?= base_url()?>/surattugas/preview_edit/<?= $surat->idSurtu?>"><span class="text-hitam">Preview</span></a></li>
                                             </ul>
                                         </div>

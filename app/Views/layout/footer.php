@@ -2,7 +2,7 @@
     </div>
     <script src="<?= base_url() ?>/temp-admin/vendor/jquery-3.2.1.min.js"></script>
     <script src="<?= base_url() ?>/temp-admin/vendor/DataTable/DataTables-1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url() ?>//temp-admin/js/dataTable.js"></script>
+    <script src="<?= base_url() ?>/temp-admin/js/dataTable.js"></script>
     <!-- Bootstrap JS-->
     <script src="<?= base_url() ?>/temp-admin/vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="<?= base_url() ?>/temp-admin/vendor/bootstrap-4.1/bootstrap.min.js"></script>

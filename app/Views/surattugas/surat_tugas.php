@@ -40,12 +40,21 @@
                                             echo('&#10067;<br>Belum Ditetapkan');
                                         }
                                         ?></td>
+                                        <?php if($data->n_status!=2){ ?>
                                         <td class="text-center"><a href="<?= base_url()?>/surattugas/edit_surat_tugas/<?= $data->idSurtu ?>" class="btn btn-sm btn-success mb-2"><i class="fa fa-edit"></i></a>
                                         <button class="btn btn-sm btn-danger" type="button" onclick="hapus_surat('<?= $data->idSurtu ?>')"><i class="fa fa-trash"></i></button>
                                         </td>
                                         <td class="text-center"><a href="<?= base_url()?>/surattugas/edit_team/<?= $data->idSurtu ?>" class="btn btn-sm btn-primary mb-2"><i class="fa fa-users"></i></a>
                                         <a href="<?= base_url()?>/surattugas/preview_edit/<?= $data->idSurtu ?>" class="btn btn-sm btn-warning"><i class="fa fa-book"></i></a>
                                         </td>
+                                        <?php } ?>
+                                        <?php if($data->n_status==2){ ?>
+                                            <td class="text-center"><button class="btn btn-sm btn-success mb-2" disabled><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-danger" type="button" onclick="hapus_surat('<?= $data->idSurtu ?>')"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                        <td class="text-center"><button class="btn btn-sm btn-primary mb-2" disabled><i class="fa fa-users"></i></button><button class="btn btn-sm btn-warning mb-2" disabled><i class="fa fa-book"></i></button>
+                                        </td>
+                                        <?php } ?>
                                         </tr>
                                     <?php } ?>
                                     </tbody>

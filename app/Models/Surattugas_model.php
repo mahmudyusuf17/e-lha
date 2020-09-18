@@ -37,7 +37,6 @@ class Surattugas_model extends Model
             'tembusan'           => $data['tembusan'],
             'created_time'       => date('Y-m-d H:i:s'),
             'update_time'        => date('Y-m-d H:i:s'),
-            'maker'              => $id,
             'user_id'            => $id
         ]);
         

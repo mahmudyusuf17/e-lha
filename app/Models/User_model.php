@@ -21,6 +21,10 @@ class User_model extends Model
         ->get()->getResultArray();
     }
 
+    function all_user(){
+        return $this->db->table('users')->get();
+    }
+
     function tampildata_id($id)
     {
         return $this->db->table('role_user')

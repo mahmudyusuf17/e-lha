@@ -2,6 +2,7 @@
 use CodeIgniter\Controller;
 use App\Models\Surattugas_model;
 use App\Models\Data_model;
+use App\Models\User_model;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
@@ -82,22 +83,6 @@ class SuratTugas extends BaseController
             'surat'         => $model->ambil_data($idSurtu)->getRow(),
             'role'          =>  $user_model->data_user($user)->getRow(),
             'isi'           => 'surattugas/input_surattugas'
-        ];
-        echo view('layout/wrapper', $data);
-    }
-
-    public function input_team($idSurtu)
-    {
-        if (session()->get('email')=='') {
-            return redirect()->to(base_url('auth'));
-        }
-        helper('tanggal');
-        $model = new Surattugas_model();
-        $data = [
-            'title'         => 'Input Team',
-            'surat'         => $model->ambil_data($idSurtu)->getRow(),
-            'team'          => $model->data_team($idSurtu)->getResult(),
-            'isi'           => 'surattugas/input_team'
         ];
         echo view('layout/wrapper', $data);
     }
@@ -256,17 +241,43 @@ class SuratTugas extends BaseController
         
     }
 
+    public function input_team($idSurtu)
+    {
+        if (session()->get('email')=='') {
+            return redirect()->to(base_url('auth'));
+        }
+        helper('tanggal');
+        $users = new User_model();
+        $user_model = new Data_model();
+        $user = session()->get('id');
+        $model = new Surattugas_model();
+        $data = [
+            'title'         => 'Input Team',
+            'surat'         => $model->ambil_data($idSurtu)->getRow(),
+            'team'          => $model->data_team($idSurtu)->getResult(),
+            'role'          => $user_model->data_user($user)->getRow(),
+            'user'          => $users->tampil_data(),
+            'isi'           => 'surattugas/input_team'
+        ];
+        echo view('layout/wrapper', $data);
+    }
+
     public function edit_team($idSurtu)
     {
         if (session()->get('email')=='') {
             return redirect()->to(base_url('auth'));
         }
         helper('tanggal');
+        $users = new User_model();
         $model = new Surattugas_model();
+        $user = session()->get('id');
+        $user_model = new Data_model();
         $data = [
             'title'         => 'Edit Team',
             'surat'         => $model->ambil_data($idSurtu)->getRow(),
             'team'          => $model->data_team($idSurtu)->getResult(),
+            'role'          => $user_model->data_user($user)->getRow(),
+            'user'          => $users->tampil_data(),
             'isi'           => 'surattugas/editteam'
         ];
         echo view('layout/wrapper', $data);
@@ -311,7 +322,46 @@ class SuratTugas extends BaseController
         }
     }
 
-    
+    public function add_peserta($idSurtu)
+    {
+        $validation = \Config\Services::validation();
+        
+        
+        // $user_model = new Data_model();
+        // $user = $user_model->findAll($id);
+        $users  = new Data_model();
+        $nip = $this->request->getvar('nip');
+        // dd($this->request->getvar());
+        $user = $users->where('nip', $nip)->first();
+        // $nip = $user['nip'];
+            $data=[
+                'nip'               => $nip,
+                'nama'              => $user['name'],
+                'unit'              => $user['unit_kerja'],
+                'jabatan'           => $user['jabatan'],
+                'tgl_awal'          => htmlspecialchars($this->request->getpost('tgl_awal')),
+                'tgl_akhir'         => htmlspecialchars($this->request->getpost('tgl_akhir')),
+            ];
+        
+
+        if ($validation->run($data, 'team')==false) {
+            session()->setFlashdata('errors', $validation->getErrors());
+            return redirect()->to(base_url('surattugas/input_team/'.$idSurtu));
+        }else{
+            $surat = new Surattugas_model();
+            $input = $surat->input_team($data, $idSurtu);
+            if ($input){
+                session()->setFlashdata('sukses', $this->request->getpost());
+                return redirect()->to(base_url('surattugas/input_team/'.$idSurtu));
+            }
+        }
+        
+    }
+
+    private function setData($data_user)
+    {
+        
+    }
 
     public function edit_datateam($id)
     {
